@@ -1,11 +1,27 @@
-<layout id="WatchFace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
-      <!-- Background flower -->
-            <bitmap id="FlowerBackground" x="center" y="center" 
-                    filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png" />
+<resources>
+    <layouts>
+        <layout id="FlowerStage1Layout">
+            <bitmap id="FlowerStage" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
+            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+        </layout>
 
-            <!-- Time label on top -->
-            <label id="TimeLabel" 
-                   x="center" y="60" 
-                   font="Graphics.FONT_LARGE"
-                   justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-</layout>
+        <layout id="FlowerStage2Layout">
+            <bitmap id="FlowerStage" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
+            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+        </layout>
+
+        <layout id="FlowerStage3Layout">
+            <bitmap id="FlowerStage" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
+            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+        </layout>
+
+        <layout id="FlowerStage4Layout">
+            <bitmap id="FlowerStage" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
+            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+        </layout>
+    </layouts>
+</resources>

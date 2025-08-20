@@ -4,14 +4,19 @@ import Toybox.System;
 import Toybox.WatchUi;
 
 class GrowPlantView extends WatchUi.WatchFace {
+    var flowerStage1 as Graphics.Bitmap;
+    var flowerStage2 as Graphics.Bitmap;
+    var flowerStage3 as Graphics.Bitmap;
+    var flowerStage4 as Graphics.Bitmap;
 
     function initialize() {
         WatchFace.initialize();
+
     }
 
     // Load your resources here
     function onLayout(dc as Dc) as Void {
-        setLayout(Rez.Layouts.WatchFace(dc));
+        setLayout(Rez.Layouts.FlowerStage1Layout(dc));
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -22,15 +27,36 @@ class GrowPlantView extends WatchUi.WatchFace {
 
     // Update the view
     function onUpdate(dc as Dc) as Void {
-        // Get and show the current time
-        var clockTime = System.getClockTime();
-        var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
-        var view = View.findDrawableById("TimeLabel") as Text;
-        view.setText(timeString);
+    var steps = ActivityMonitor.getInfo().steps;
+    var goal  = ActivityMonitor.getInfo().stepGoal;
+    var percent = (goal > 0) ? steps * 1.0 / goal : 0.0;
 
-        // Call the parent onUpdate function to redraw the layout
-        View.onUpdate(dc);
+    // Switch layout based on step progress
+    if (percent < 0.25) {
+        setLayout(Rez.Layouts.FlowerStage1Layout(dc));
+    } else if (percent < 0.50) {
+        setLayout(Rez.Layouts.FlowerStage2Layout(dc));
+    } else if (percent < 0.75) {
+        setLayout(Rez.Layouts.FlowerStage3Layout(dc));
+    } else {
+        setLayout(Rez.Layouts.FlowerStage4Layout(dc));
     }
+
+    // Update time label
+    var clockTime = System.getClockTime();
+    var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
+    var timeView = View.findDrawableById("TimeLabel") as Text;
+    timeView.setText(timeString);
+
+     // Update step label
+        var stepString = Lang.format("$1$ / $2$ steps", [steps, goal]);
+        var stepView = View.findDrawableById("StepLabel") as Text;
+        stepView.setText(stepString);
+
+    View.onUpdate(dc);
+}
+
+
 
     // Called when this View is removed from the screen. Save the
     // state of this View here. This includes freeing resources from
