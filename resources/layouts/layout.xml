@@ -1,0 +1,11 @@
+<layout id="WatchFace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+      <!-- Background flower -->
+            <bitmap id="FlowerBackground" x="center" y="center" 
+                    filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png" />
+
+            <!-- Time label on top -->
+            <label id="TimeLabel" 
+                   x="center" y="60" 
+                   font="Graphics.FONT_LARGE"
+                   justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+</layout>
