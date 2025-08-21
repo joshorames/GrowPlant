@@ -42,6 +42,17 @@ class GrowPlantView extends WatchUi.WatchFace {
         setLayout(Rez.Layouts.FlowerStage4Layout(dc));
     }
 
+    // === BATTERY ===
+        var charge = System.getSystemStats().battery;
+        var rounded = Math.round(charge);
+        var batteryString = rounded.toString() + "%";
+
+        var batteryView = View.findDrawableById("BatteryLabel") as Text;
+        if (batteryView != null) {
+            batteryView.setText(batteryString);
+        }
+
+
     // Update time label
     var clockTime = System.getClockTime();
     var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
@@ -49,9 +60,16 @@ class GrowPlantView extends WatchUi.WatchFace {
     timeView.setText(timeString);
 
      // Update step label
-        var stepString = Lang.format("$1$ / $2$ steps", [steps, goal]);
-        var stepView = View.findDrawableById("StepLabel") as Text;
-        stepView.setText(stepString);
+    var stepString = Lang.format("$1$ / $2$ steps", [steps, goal]);
+    var stepView = View.findDrawableById("StepLabel") as Text;
+    // Calculate percent
+        var stepPercent = (steps * 100.0 / goal).toNumber();
+        if (stepPercent > 100) {
+            stepPercent = 100; // cap at 100%
+        }
+        // Round to nearest whole number
+        var percentRounded = Math.round(stepPercent);
+    stepView.setText(percentRounded.toString()+"% to goal");
 
     View.onUpdate(dc);
 }

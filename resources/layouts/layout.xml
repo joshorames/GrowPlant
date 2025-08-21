@@ -4,24 +4,28 @@
             <bitmap id="FlowerStage" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
             <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
             <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <label id="BatteryLabel" x="center" y="100" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
         </layout>
 
         <layout id="FlowerStage2Layout">
             <bitmap id="FlowerStage" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
             <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
             <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <label id="BatteryLabel" x="center" y="100" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
         </layout>
 
         <layout id="FlowerStage3Layout">
             <bitmap id="FlowerStage" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
             <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
             <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <label id="BatteryLabel" x="center" y="100" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
         </layout>
 
         <layout id="FlowerStage4Layout">
             <bitmap id="FlowerStage" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
             <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
             <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <label id="BatteryLabel" x="center" y="100" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
         </layout>
     </layouts>
 </resources>

@@ -23,46 +23,61 @@
 <entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="40" parent="globals/GrowPlantView" pc="268435816" symbol="onUpdate"/>
 <entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="42" parent="globals/GrowPlantView" pc="268435860" symbol="onUpdate"/>
 <entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="46" parent="globals/GrowPlantView" pc="268435901" symbol="onUpdate"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="47" parent="globals/GrowPlantView" pc="268435918" symbol="onUpdate"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="48" parent="globals/GrowPlantView" pc="268435992" symbol="onUpdate"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="49" parent="globals/GrowPlantView" pc="268436020" symbol="onUpdate"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="52" parent="globals/GrowPlantView" pc="268436034" symbol="onUpdate"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="53" parent="globals/GrowPlantView" pc="268436082" symbol="onUpdate"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="54" parent="globals/GrowPlantView" pc="268436110" symbol="onUpdate"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="56" parent="globals/GrowPlantView" pc="268436124" symbol="onUpdate"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="12" lineNum="12" parent="globals/GrowPlantApp" pc="268436149" symbol="onStart"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="13" lineNum="20" parent="globals/GrowPlantApp" pc="268436152" symbol="getInitialView"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="13" lineNum="21" parent="globals/GrowPlantApp" pc="268436154" symbol="getInitialView"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="14" lineNum="7" parent="globals/GrowPlantApp" pc="268436191" symbol="initialize"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="14" lineNum="8" parent="globals/GrowPlantApp" pc="268436193" symbol="initialize"/>
-<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="15" lineNum="16" parent="globals/GrowPlantApp" pc="268436212" symbol="onStop"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="25" parent="globals/Rez/Layouts" pc="268436215" symbol="FlowerStage2Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="26" parent="globals/Rez/Layouts" pc="268436227" symbol="FlowerStage2Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="27" parent="globals/Rez/Layouts" pc="268436332" symbol="FlowerStage2Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="29" parent="globals/Rez/Layouts" pc="268436384" symbol="FlowerStage2Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="31" parent="globals/Rez/Layouts" pc="268436483" symbol="FlowerStage2Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="33" parent="globals/Rez/Layouts" pc="268436582" symbol="FlowerStage2Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="36" parent="globals/Rez/Layouts" pc="268436619" symbol="FlowerStage3Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="37" parent="globals/Rez/Layouts" pc="268436631" symbol="FlowerStage3Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="38" parent="globals/Rez/Layouts" pc="268436736" symbol="FlowerStage3Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="40" parent="globals/Rez/Layouts" pc="268436788" symbol="FlowerStage3Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="42" parent="globals/Rez/Layouts" pc="268436887" symbol="FlowerStage3Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="44" parent="globals/Rez/Layouts" pc="268436986" symbol="FlowerStage3Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="14" parent="globals/Rez/Layouts" pc="268437023" symbol="FlowerStage1Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="15" parent="globals/Rez/Layouts" pc="268437035" symbol="FlowerStage1Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="16" parent="globals/Rez/Layouts" pc="268437140" symbol="FlowerStage1Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="18" parent="globals/Rez/Layouts" pc="268437192" symbol="FlowerStage1Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="20" parent="globals/Rez/Layouts" pc="268437291" symbol="FlowerStage1Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="22" parent="globals/Rez/Layouts" pc="268437390" symbol="FlowerStage1Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="47" parent="globals/Rez/Layouts" pc="268437427" symbol="FlowerStage4Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="48" parent="globals/Rez/Layouts" pc="268437439" symbol="FlowerStage4Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="49" parent="globals/Rez/Layouts" pc="268437544" symbol="FlowerStage4Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="51" parent="globals/Rez/Layouts" pc="268437596" symbol="FlowerStage4Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="53" parent="globals/Rez/Layouts" pc="268437695" symbol="FlowerStage4Layout"/>
-<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="55" parent="globals/Rez/Layouts" pc="268437794" symbol="FlowerStage4Layout"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="47" parent="globals/GrowPlantView" pc="268435924" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="48" parent="globals/GrowPlantView" pc="268435943" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="50" parent="globals/GrowPlantView" pc="268435962" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="51" parent="globals/GrowPlantView" pc="268435990" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="52" parent="globals/GrowPlantView" pc="268435997" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="57" parent="globals/GrowPlantView" pc="268436014" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="58" parent="globals/GrowPlantView" pc="268436031" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="59" parent="globals/GrowPlantView" pc="268436105" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="60" parent="globals/GrowPlantView" pc="268436133" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="63" parent="globals/GrowPlantView" pc="268436147" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="64" parent="globals/GrowPlantView" pc="268436195" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="66" parent="globals/GrowPlantView" pc="268436223" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="67" parent="globals/GrowPlantView" pc="268436245" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="68" parent="globals/GrowPlantView" pc="268436256" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="71" parent="globals/GrowPlantView" pc="268436266" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="72" parent="globals/GrowPlantView" pc="268436285" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantView.mc" id="11" lineNum="74" parent="globals/GrowPlantView" pc="268436314" symbol="onUpdate"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="12" lineNum="12" parent="globals/GrowPlantApp" pc="268436339" symbol="onStart"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="13" lineNum="20" parent="globals/GrowPlantApp" pc="268436342" symbol="getInitialView"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="13" lineNum="21" parent="globals/GrowPlantApp" pc="268436344" symbol="getInitialView"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="14" lineNum="7" parent="globals/GrowPlantApp" pc="268436381" symbol="initialize"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="14" lineNum="8" parent="globals/GrowPlantApp" pc="268436383" symbol="initialize"/>
+<entry filename="C:\\Users\\josho\\Desktop\\GrowPlant\\source\\GrowPlantApp.mc" id="15" lineNum="16" parent="globals/GrowPlantApp" pc="268436402" symbol="onStop"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="27" parent="globals/Rez/Layouts" pc="268436405" symbol="FlowerStage2Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="28" parent="globals/Rez/Layouts" pc="268436417" symbol="FlowerStage2Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="29" parent="globals/Rez/Layouts" pc="268436522" symbol="FlowerStage2Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="31" parent="globals/Rez/Layouts" pc="268436574" symbol="FlowerStage2Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="33" parent="globals/Rez/Layouts" pc="268436673" symbol="FlowerStage2Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="35" parent="globals/Rez/Layouts" pc="268436772" symbol="FlowerStage2Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="16" lineNum="37" parent="globals/Rez/Layouts" pc="268436884" symbol="FlowerStage2Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="40" parent="globals/Rez/Layouts" pc="268436931" symbol="FlowerStage3Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="41" parent="globals/Rez/Layouts" pc="268436943" symbol="FlowerStage3Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="42" parent="globals/Rez/Layouts" pc="268437048" symbol="FlowerStage3Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="44" parent="globals/Rez/Layouts" pc="268437100" symbol="FlowerStage3Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="46" parent="globals/Rez/Layouts" pc="268437199" symbol="FlowerStage3Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="48" parent="globals/Rez/Layouts" pc="268437298" symbol="FlowerStage3Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="17" lineNum="50" parent="globals/Rez/Layouts" pc="268437410" symbol="FlowerStage3Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="14" parent="globals/Rez/Layouts" pc="268437457" symbol="FlowerStage1Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="15" parent="globals/Rez/Layouts" pc="268437469" symbol="FlowerStage1Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="16" parent="globals/Rez/Layouts" pc="268437574" symbol="FlowerStage1Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="18" parent="globals/Rez/Layouts" pc="268437626" symbol="FlowerStage1Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="20" parent="globals/Rez/Layouts" pc="268437725" symbol="FlowerStage1Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="22" parent="globals/Rez/Layouts" pc="268437824" symbol="FlowerStage1Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="18" lineNum="24" parent="globals/Rez/Layouts" pc="268437936" symbol="FlowerStage1Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="53" parent="globals/Rez/Layouts" pc="268437983" symbol="FlowerStage4Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="54" parent="globals/Rez/Layouts" pc="268437995" symbol="FlowerStage4Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="55" parent="globals/Rez/Layouts" pc="268438100" symbol="FlowerStage4Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="57" parent="globals/Rez/Layouts" pc="268438152" symbol="FlowerStage4Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="59" parent="globals/Rez/Layouts" pc="268438251" symbol="FlowerStage4Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="61" parent="globals/Rez/Layouts" pc="268438350" symbol="FlowerStage4Layout"/>
+<entry filename="c:\\Users\\josho\\Desktop\\GrowPlant\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="19" lineNum="63" parent="globals/Rez/Layouts" pc="268438462" symbol="FlowerStage4Layout"/>
 </pcToLineNum>
 <symbolTable>
 <entry id="8388639" module="true" symbol="Graphics"/>
+<entry id="8389346" symbol="text"/>
 <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
 <entry id="6" object="true" symbol="GrowPlantApp"/>
 <entry field="true" id="8388611" module="true" symbol="Toybox"/>
@@ -112,31 +127,41 @@
 </symbolTable>
 <localVars>
 <entry arg="true" endPc="268435591" name="dc" stackId="1" startPc="268435548"/>
-<entry arg="true" endPc="268436148" name="dc" stackId="1" startPc="268435613"/>
-<entry endPc="268436147" name="steps" stackId="2" startPc="268435617"/>
-<entry endPc="268436147" name="goal" stackId="3" startPc="268435617"/>
-<entry endPc="268436147" name="percent" stackId="4" startPc="268435617"/>
-<entry endPc="268436147" name="clockTime" stackId="5" startPc="268435617"/>
-<entry endPc="268436147" name="timeString" stackId="6" startPc="268435617"/>
-<entry endPc="268436147" name="timeView" stackId="7" startPc="268435617"/>
-<entry endPc="268436147" name="stepString" stackId="8" startPc="268435617"/>
-<entry endPc="268436147" name="stepView" stackId="9" startPc="268435617"/>
-<entry arg="true" endPc="268436618" name="dc" stackId="1" startPc="268436215"/>
-<entry endPc="268436618" name="rez_cmp_local_bitmap_FlowerStage" stackId="2" startPc="268436227"/>
-<entry endPc="268436618" name="rez_cmp_local_text_TimeLabel" stackId="3" startPc="268436227"/>
-<entry endPc="268436618" name="rez_cmp_local_text_StepLabel" stackId="4" startPc="268436227"/>
-<entry arg="true" endPc="268437022" name="dc" stackId="1" startPc="268436619"/>
-<entry endPc="268437022" name="rez_cmp_local_bitmap_FlowerStage" stackId="2" startPc="268436631"/>
-<entry endPc="268437022" name="rez_cmp_local_text_TimeLabel" stackId="3" startPc="268436631"/>
-<entry endPc="268437022" name="rez_cmp_local_text_StepLabel" stackId="4" startPc="268436631"/>
-<entry arg="true" endPc="268437426" name="dc" stackId="1" startPc="268437023"/>
-<entry endPc="268437426" name="rez_cmp_local_bitmap_FlowerStage" stackId="2" startPc="268437035"/>
-<entry endPc="268437426" name="rez_cmp_local_text_TimeLabel" stackId="3" startPc="268437035"/>
-<entry endPc="268437426" name="rez_cmp_local_text_StepLabel" stackId="4" startPc="268437035"/>
-<entry arg="true" endPc="268437830" name="dc" stackId="1" startPc="268437427"/>
-<entry endPc="268437830" name="rez_cmp_local_bitmap_FlowerStage" stackId="2" startPc="268437439"/>
-<entry endPc="268437830" name="rez_cmp_local_text_TimeLabel" stackId="3" startPc="268437439"/>
-<entry endPc="268437830" name="rez_cmp_local_text_StepLabel" stackId="4" startPc="268437439"/>
+<entry arg="true" endPc="268436338" name="dc" stackId="1" startPc="268435613"/>
+<entry endPc="268436337" name="steps" stackId="2" startPc="268435617"/>
+<entry endPc="268436337" name="goal" stackId="3" startPc="268435617"/>
+<entry endPc="268436337" name="percent" stackId="4" startPc="268435617"/>
+<entry endPc="268436337" name="charge" stackId="5" startPc="268435617"/>
+<entry endPc="268436337" name="rounded" stackId="6" startPc="268435617"/>
+<entry endPc="268436337" name="batteryString" stackId="7" startPc="268435617"/>
+<entry endPc="268436337" name="batteryView" stackId="8" startPc="268435617"/>
+<entry endPc="268436337" name="clockTime" stackId="9" startPc="268435617"/>
+<entry endPc="268436337" name="timeString" stackId="10" startPc="268435617"/>
+<entry endPc="268436337" name="timeView" stackId="11" startPc="268435617"/>
+<entry endPc="268436337" name="stepString" stackId="12" startPc="268435617"/>
+<entry endPc="268436337" name="stepView" stackId="13" startPc="268435617"/>
+<entry endPc="268436337" name="stepPercent" stackId="14" startPc="268435617"/>
+<entry endPc="268436337" name="percentRounded" stackId="15" startPc="268435617"/>
+<entry arg="true" endPc="268436930" name="dc" stackId="1" startPc="268436405"/>
+<entry endPc="268436930" name="rez_cmp_local_bitmap_FlowerStage" stackId="2" startPc="268436417"/>
+<entry endPc="268436930" name="rez_cmp_local_text_TimeLabel" stackId="3" startPc="268436417"/>
+<entry endPc="268436930" name="rez_cmp_local_text_StepLabel" stackId="4" startPc="268436417"/>
+<entry endPc="268436930" name="rez_cmp_local_text_BatteryLabel" stackId="5" startPc="268436417"/>
+<entry arg="true" endPc="268437456" name="dc" stackId="1" startPc="268436931"/>
+<entry endPc="268437456" name="rez_cmp_local_bitmap_FlowerStage" stackId="2" startPc="268436943"/>
+<entry endPc="268437456" name="rez_cmp_local_text_TimeLabel" stackId="3" startPc="268436943"/>
+<entry endPc="268437456" name="rez_cmp_local_text_StepLabel" stackId="4" startPc="268436943"/>
+<entry endPc="268437456" name="rez_cmp_local_text_BatteryLabel" stackId="5" startPc="268436943"/>
+<entry arg="true" endPc="268437982" name="dc" stackId="1" startPc="268437457"/>
+<entry endPc="268437982" name="rez_cmp_local_bitmap_FlowerStage" stackId="2" startPc="268437469"/>
+<entry endPc="268437982" name="rez_cmp_local_text_TimeLabel" stackId="3" startPc="268437469"/>
+<entry endPc="268437982" name="rez_cmp_local_text_StepLabel" stackId="4" startPc="268437469"/>
+<entry endPc="268437982" name="rez_cmp_local_text_BatteryLabel" stackId="5" startPc="268437469"/>
+<entry arg="true" endPc="268438508" name="dc" stackId="1" startPc="268437983"/>
+<entry endPc="268438508" name="rez_cmp_local_bitmap_FlowerStage" stackId="2" startPc="268437995"/>
+<entry endPc="268438508" name="rez_cmp_local_text_TimeLabel" stackId="3" startPc="268437995"/>
+<entry endPc="268438508" name="rez_cmp_local_text_StepLabel" stackId="4" startPc="268437995"/>
+<entry endPc="268438508" name="rez_cmp_local_text_BatteryLabel" stackId="5" startPc="268437995"/>
 </localVars>
 <deviceInfo deviceVersion="6ebc8d0b0908ae9fc8258ec606a499f328ec65ff" partNumber="006-B3869-00"/>
 <annotations>
@@ -185,21 +210,21 @@
 <functionEntry accessMode="public" name="onHide" parent="GrowPlantView">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268436148" name="onUpdate" parent="GrowPlantView" startPc="268435613">
+<functionEntry accessMode="public" endPc="268436338" name="onUpdate" parent="GrowPlantView" startPc="268435613">
 <param id="dc"/>
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268436151" name="onStart" parent="GrowPlantApp" startPc="268436149">
+<functionEntry accessMode="public" endPc="268436341" name="onStart" parent="GrowPlantApp" startPc="268436339">
 <param id="state"/>
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268436190" name="getInitialView" parent="GrowPlantApp" startPc="268436152">
+<functionEntry accessMode="public" endPc="268436380" name="getInitialView" parent="GrowPlantApp" startPc="268436342">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268436211" name="initialize" parent="GrowPlantApp" startPc="268436191">
+<functionEntry accessMode="public" endPc="268436401" name="initialize" parent="GrowPlantApp" startPc="268436381">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268436214" name="onStop" parent="GrowPlantApp" startPc="268436212">
+<functionEntry accessMode="public" endPc="268436404" name="onStop" parent="GrowPlantApp" startPc="268436402">
 <param id="state"/>
 <documentation/>
 </functionEntry>
@@ -212,19 +237,19 @@
 <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268436618" name="FlowerStage2Layout" parent="Layouts" startPc="268436215">
+<functionEntry accessMode="public" endPc="268436930" name="FlowerStage2Layout" parent="Layouts" startPc="268436405">
 <param id="dc"/>
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268437022" name="FlowerStage3Layout" parent="Layouts" startPc="268436619">
+<functionEntry accessMode="public" endPc="268437456" name="FlowerStage3Layout" parent="Layouts" startPc="268436931">
 <param id="dc"/>
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268437426" name="FlowerStage1Layout" parent="Layouts" startPc="268437023">
+<functionEntry accessMode="public" endPc="268437982" name="FlowerStage1Layout" parent="Layouts" startPc="268437457">
 <param id="dc"/>
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268437830" name="FlowerStage4Layout" parent="Layouts" startPc="268437427">
+<functionEntry accessMode="public" endPc="268438508" name="FlowerStage4Layout" parent="Layouts" startPc="268437983">
 <param id="dc"/>
 <documentation/>
 </functionEntry>
