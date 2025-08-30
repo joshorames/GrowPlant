@@ -48,24 +48,7 @@ class GrowPlantView extends WatchUi.WatchFace {
         setLayout(Rez.Layouts.FlowerStage6Layout(dc));
     }
 
-    // === BATTERY ===
-        var charge = System.getSystemStats().battery;
-        var rounded = Math.round(charge);
-        var batteryString = rounded.toString() + "%";
-
-        var batteryView = View.findDrawableById("BatteryLabel") as Text;
-        if (batteryView != null) {
-            batteryView.setText(batteryString);
-        }
-
-
-    // Update time label
-    var clockTime = System.getClockTime();
-    var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
-    var timeView = View.findDrawableById("TimeLabel") as Text;
-    timeView.setText(timeString);
-
-     // Update step label
+    // Update step label
     //var stepString = Lang.format("$1$ / $2$ steps", [steps, goal]);
     var stepView = View.findDrawableById("StepLabel") as Text;
     // Calculate percent
@@ -78,6 +61,57 @@ class GrowPlantView extends WatchUi.WatchFace {
     stepView.setText(percentRounded.toString()+"% to goal");
 
     View.onUpdate(dc);
+// Battery bar at bottom
+var batteryPct = System.getSystemStats().battery; // 0-100
+var barWidth = dc.getWidth() - 100; // leave 10px padding
+var barHeight = 6;
+var bx = 50;               
+var by = dc.getHeight() - barHeight -25; // 5px padding from bottom
+var fillWidth = Math.floor(barWidth * (batteryPct / 100.0));
+
+dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_BLACK);
+
+// Draw outline (top, bottom, left, right)
+dc.drawLine(bx, by, bx + barWidth, by);                   // top
+dc.drawLine(bx, by + barHeight, bx + barWidth, by + barHeight); // bottom
+dc.drawLine(bx, by, bx, by + barHeight);                 // left
+dc.drawLine(bx + barWidth, by, bx + barWidth, by + barHeight); // right
+
+// Fill battery bar with horizontal lines
+if (fillWidth > 2) { // avoid negative width
+    for (var fy = by + 1; fy < by + barHeight; fy += 1) {
+        dc.drawLine(bx + 1, fy, bx + fillWidth - 1, fy);
+    }
+}
+  dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+    // --- Draw big readable time ---
+    var clockTime = System.getClockTime();
+    var timeString = Lang.format("$1$:$2$", 
+        [clockTime.hour, clockTime.min.format("%02d")]);
+
+    var cx = dc.getWidth() / 2;
+    var cy = 90; // vertical center
+    var font = Graphics.FONT_LARGE;
+
+    // Auto-scale width based on digits (fake scaling)
+    // Draw each digit slightly offset horizontally and vertically
+    var offsets = [-2, -1, 0, 1, 2]; // wider spacing for boldness
+    for (var i = 0; i < offsets.size(); i += 1) {
+    var dx = offsets[i];
+    for (var j = 0; j < offsets.size(); j += 1) {
+        var dy = offsets[j];
+        if (!(dx == 0 && dy == 0)) {
+            dc.drawText(cx + dx, cy + dy, font, timeString, Graphics.TEXT_JUSTIFY_CENTER);
+        }
+    }
+}
+
+
+    // Draw main crisp text on top
+    dc.drawText(cx, cy, font, timeString, Graphics.TEXT_JUSTIFY_CENTER);
+
+
+    
 }
 
 

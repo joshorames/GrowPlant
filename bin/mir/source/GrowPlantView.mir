@@ -62,9 +62,9 @@ C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_20_40_22_4_stop:
     }
     [ @file = "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc"; @line = 31; @symbol_functiondef = [onUpdate,31,13,21]; @symbol_param<0> = [dc,31,22,24]; @symbol_param<0>_type<0> = [Dc,31,28,30]; ]
     function onUpdate(dc as Dc) as Void {
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start:
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 32 4 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
         %steps.1 = local;
         symbol [ steps %steps.1 32 8 13 ];
         symbol [ ActivityMonitor %tmp.2 32 16 31 ];
@@ -77,7 +77,7 @@ C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start:
         lputv %steps.1 %tmp.5;
         symbol [ steps %steps.1 32 8 13 ];
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 33 4 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
         %goal.2 = local;
         symbol [ goal %goal.2 33 8 12 ];
         symbol [ ActivityMonitor %tmp.7 33 16 31 ];
@@ -90,7 +90,7 @@ C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start:
         lputv %goal.2 %tmp.10;
         symbol [ goal %goal.2 33 8 12 ];
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 34 4 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
         %percent.3 = local;
         symbol [ percent %percent.3 34 8 15 ];
 C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_34_18_34_52_begin:
@@ -267,231 +267,590 @@ C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_43_11_49_4_if_end:
 C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_41_11_49_4_if_end:
 C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_39_11_49_4_if_end:
 C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_37_4_49_4_if_end:
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 52 8 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
-        %charge.4 = local;
-        symbol [ charge %charge.4 52 12 18 ];
-        symbol [ System %tmp.84 52 21 27 ];
-        %tmp.84 = getm $.Toybox.System;
-        symbol [ getSystemStats %tmp.85 52 28 42 ];
-        %tmp.85 = getv function %tmp.84 :getSystemStats;
-        %tmp.86 = invoke %tmp.84 %tmp.85();
-        symbol [ battery %tmp.87 52 45 52 ];
-        %tmp.87 = getv %tmp.86 :battery;
-        lputv %charge.4 %tmp.87;
-        symbol [ charge %charge.4 52 12 18 ];
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 53 8 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
-        %rounded.5 = local;
-        symbol [ rounded %rounded.5 53 12 19 ];
-        symbol [ Math %tmp.89 53 22 26 ];
-        %tmp.89 = getv ? :Math;
-        symbol [ round %tmp.90 53 27 32 ];
-        %tmp.90 = getv function %tmp.89 :round;
-        %tmp.91 = lgetv %charge.4;
-        symbol [ charge %tmp.91 53 33 39 ];
-        %tmp.92 = invoke %tmp.89 %tmp.90(%tmp.91);
-        lputv %rounded.5 %tmp.92;
-        symbol [ rounded %rounded.5 53 12 19 ];
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 54 8 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
-        %batteryString.6 = local;
-        symbol [ batteryString %batteryString.6 54 12 25 ];
-        %tmp.93 = lgetv %rounded.5;
-        symbol [ rounded %tmp.93 54 28 35 ];
-        symbol [ toString %tmp.94 54 36 44 ];
-        %tmp.94 = getv function %tmp.93 :toString;
-        %tmp.95 = invoke %tmp.93 %tmp.94();
-        %tmp.96 = "%";
-        %tmp.97 = add %tmp.95 %tmp.96;
-        lputv %batteryString.6 %tmp.97;
-        symbol [ batteryString %batteryString.6 54 12 25 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 53 4 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %stepView.4 = local;
+        symbol [ stepView %stepView.4 53 8 16 ];
+        symbol [ View %tmp.85 53 19 23 ];
+        %tmp.85 = getv ? :View;
+        symbol [ findDrawableById %tmp.86 53 24 40 ];
+        %tmp.86 = getv function %tmp.85 :findDrawableById;
+        %tmp.87 = "StepLabel";
+        %tmp.88 = invoke %tmp.85 %tmp.86(%tmp.87);
+        %tmp.89 = as %tmp.88 Text;
+        symbol [ Text %tmp.89 53 57 61 ];
+        lputv %stepView.4 %tmp.89;
+        symbol [ stepView %stepView.4 53 8 16 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 55 8 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %stepPercent.5 = local;
+        symbol [ stepPercent %stepPercent.5 55 12 23 ];
+        %tmp.90 = lgetv %steps.1;
+        symbol [ steps %tmp.90 55 27 32 ];
+        %tmp.91 = 100.0;
+        %tmp.92 = mul %tmp.90 %tmp.91;
+        %tmp.93 = lgetv %goal.2;
+        symbol [ goal %tmp.93 55 43 47 ];
+        %tmp.94 = div %tmp.92 %tmp.93;
+        symbol [ toNumber %tmp.95 55 49 57 ];
+        %tmp.95 = getv function %tmp.94 :toNumber;
+        %tmp.96 = invoke %tmp.94 %tmp.95();
+        lputv %stepPercent.5 %tmp.96;
+        symbol [ stepPercent %stepPercent.5 55 12 23 ];
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 56 8 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
-        %batteryView.7 = local;
-        symbol [ batteryView %batteryView.7 56 12 23 ];
-        symbol [ View %tmp.99 56 26 30 ];
-        %tmp.99 = getv ? :View;
-        symbol [ findDrawableById %tmp.100 56 31 47 ];
-        %tmp.100 = getv function %tmp.99 :findDrawableById;
-        %tmp.101 = "BatteryLabel";
-        %tmp.102 = invoke %tmp.99 %tmp.100(%tmp.101);
-        %tmp.103 = as %tmp.102 Text;
-        symbol [ Text %tmp.103 56 67 71 ];
-        lputv %batteryView.7 %tmp.103;
-        symbol [ batteryView %batteryView.7 56 12 23 ];
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 57 8 ]
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_57_8_59_8_if_stmt:
-        %tmp.104 = lgetv %batteryView.7;
-        symbol [ batteryView %tmp.104 57 12 23 ];
-        %tmp.105 = null;
-        %tmp.106 = ne %tmp.104 %tmp.105;
-        bf %tmp.106 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_57_8_59_8_if_end;
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_57_8_59_8_if_true:
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_57_33_59_8_start:
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 58 12 ]
-        %tmp.107 = lgetv %batteryView.7;
-        symbol [ batteryView %tmp.107 58 12 23 ];
-        %tmp.108 = as %tmp.107 { (!Null) };
-        symbol [ setText %tmp.109 58 24 31 ];
-        %tmp.109 = getv function %tmp.108 :setText;
-        %tmp.110 = lgetv %batteryString.6;
-        symbol [ batteryString %tmp.110 58 32 45 ];
-        invoke %tmp.108 %tmp.109(%tmp.110);
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_57_33_59_8_stop:
-        goto @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_57_8_59_8_if_end;
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_57_8_59_8_if_end:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_56_8_58_8_if_stmt:
+        %tmp.97 = lgetv %stepPercent.5;
+        symbol [ stepPercent %tmp.97 56 12 23 ];
+        %tmp.98 = 100;
+        %tmp.99 = gt %tmp.97 %tmp.98;
+        bf %tmp.99 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_56_8_58_8_if_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_56_8_58_8_if_true:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_56_31_58_8_start:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 57 12 ]
+        %tmp.100 = 100;
+        lputv %stepPercent.5 %tmp.100;
+        symbol [ stepPercent %stepPercent.5 57 12 23 ];
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_56_31_58_8_stop:
+        goto @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_56_8_58_8_if_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_56_8_58_8_if_end:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 60 8 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %percentRounded.6 = local;
+        symbol [ percentRounded %percentRounded.6 60 12 26 ];
+        symbol [ Math %tmp.102 60 29 33 ];
+        %tmp.102 = getv ? :Math;
+        symbol [ round %tmp.103 60 34 39 ];
+        %tmp.103 = getv function %tmp.102 :round;
+        %tmp.104 = lgetv %stepPercent.5;
+        symbol [ stepPercent %tmp.104 60 40 51 ];
+        %tmp.105 = invoke %tmp.102 %tmp.103(%tmp.104);
+        lputv %percentRounded.6 %tmp.105;
+        symbol [ percentRounded %percentRounded.6 60 12 26 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 61 4 ]
+        %tmp.106 = lgetv %stepView.4;
+        symbol [ stepView %tmp.106 61 4 12 ];
+        symbol [ setText %tmp.107 61 13 20 ];
+        %tmp.107 = getv function %tmp.106 :setText;
+        %tmp.108 = lgetv %percentRounded.6;
+        symbol [ percentRounded %tmp.108 61 21 35 ];
+        symbol [ toString %tmp.109 61 36 44 ];
+        %tmp.109 = getv function %tmp.108 :toString;
+        %tmp.110 = invoke %tmp.108 %tmp.109();
+        %tmp.111 = "% to goal";
+        %tmp.112 = add %tmp.110 %tmp.111;
+        invoke %tmp.106 %tmp.107(%tmp.112);
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 63 4 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
-        %clockTime.8 = local;
-        symbol [ clockTime %clockTime.8 63 8 17 ];
-        symbol [ System %tmp.111 63 20 26 ];
-        %tmp.111 = getm $.Toybox.System;
-        symbol [ getClockTime %tmp.112 63 27 39 ];
-        %tmp.112 = getv function %tmp.111 :getClockTime;
-        %tmp.113 = invoke %tmp.111 %tmp.112();
-        lputv %clockTime.8 %tmp.113;
-        symbol [ clockTime %clockTime.8 63 8 17 ];
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 64 4 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
-        %timeString.9 = local;
-        symbol [ timeString %timeString.9 64 8 18 ];
-        symbol [ Lang %tmp.114 64 21 25 ];
-        %tmp.114 = getm $.Toybox.Lang;
-        symbol [ format %tmp.115 64 26 32 ];
-        %tmp.115 = getv function %tmp.114 :format;
-        %tmp.116 = "$1$:$2$";
-        %tmp.117 = newa 2;
-        %tmp.118 = lgetv %clockTime.8;
-        symbol [ clockTime %tmp.118 64 45 54 ];
-        symbol [ hour %tmp.119 64 55 59 ];
-        %tmp.119 = getv %tmp.118 :hour;
-        %tmp.120 = dup %tmp.117;
-        %tmp.121 = aputv %tmp.120 0 %tmp.119;
-        %tmp.122 = lgetv %clockTime.8;
-        symbol [ clockTime %tmp.122 64 61 70 ];
-        symbol [ min %tmp.123 64 71 74 ];
-        %tmp.123 = getv %tmp.122 :min;
-        symbol [ format %tmp.124 64 75 81 ];
-        %tmp.124 = getv function %tmp.123 :format;
-        %tmp.125 = "%02d";
-        %tmp.126 = invoke %tmp.123 %tmp.124(%tmp.125);
-        %tmp.127 = dup %tmp.121;
-        %tmp.128 = aputv %tmp.127 1 %tmp.126;
-        %tmp.129 = invoke %tmp.114 %tmp.115(%tmp.116, %tmp.128);
-        lputv %timeString.9 %tmp.129;
-        symbol [ timeString %timeString.9 64 8 18 ];
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 65 4 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
-        %timeView.10 = local;
-        symbol [ timeView %timeView.10 65 8 16 ];
-        symbol [ View %tmp.131 65 19 23 ];
-        %tmp.131 = getv ? :View;
-        symbol [ findDrawableById %tmp.132 65 24 40 ];
-        %tmp.132 = getv function %tmp.131 :findDrawableById;
-        %tmp.133 = "TimeLabel";
-        %tmp.134 = invoke %tmp.131 %tmp.132(%tmp.133);
-        %tmp.135 = as %tmp.134 Text;
-        symbol [ Text %tmp.135 65 57 61 ];
-        lputv %timeView.10 %tmp.135;
-        symbol [ timeView %timeView.10 65 8 16 ];
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 66 4 ]
-        %tmp.136 = lgetv %timeView.10;
-        symbol [ timeView %tmp.136 66 4 12 ];
-        symbol [ setText %tmp.137 66 13 20 ];
-        %tmp.137 = getv function %tmp.136 :setText;
-        %tmp.138 = lgetv %timeString.9;
-        symbol [ timeString %tmp.138 66 21 31 ];
-        invoke %tmp.136 %tmp.137(%tmp.138);
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 70 4 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
-        %stepView.11 = local;
-        symbol [ stepView %stepView.11 70 8 16 ];
-        symbol [ View %tmp.140 70 19 23 ];
-        %tmp.140 = getv ? :View;
-        symbol [ findDrawableById %tmp.141 70 24 40 ];
-        %tmp.141 = getv function %tmp.140 :findDrawableById;
-        %tmp.142 = "StepLabel";
-        %tmp.143 = invoke %tmp.140 %tmp.141(%tmp.142);
-        %tmp.144 = as %tmp.143 Text;
-        symbol [ Text %tmp.144 70 57 61 ];
-        lputv %stepView.11 %tmp.144;
-        symbol [ stepView %stepView.11 70 8 16 ];
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 72 8 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
-        %stepPercent.12 = local;
-        symbol [ stepPercent %stepPercent.12 72 12 23 ];
-        %tmp.145 = lgetv %steps.1;
-        symbol [ steps %tmp.145 72 27 32 ];
-        %tmp.146 = 100.0;
-        %tmp.147 = mul %tmp.145 %tmp.146;
-        %tmp.148 = lgetv %goal.2;
-        symbol [ goal %tmp.148 72 43 47 ];
-        %tmp.149 = div %tmp.147 %tmp.148;
-        symbol [ toNumber %tmp.150 72 49 57 ];
-        %tmp.150 = getv function %tmp.149 :toNumber;
-        %tmp.151 = invoke %tmp.149 %tmp.150();
-        lputv %stepPercent.12 %tmp.151;
-        symbol [ stepPercent %stepPercent.12 72 12 23 ];
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 73 8 ]
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_73_8_75_8_if_stmt:
-        %tmp.152 = lgetv %stepPercent.12;
-        symbol [ stepPercent %tmp.152 73 12 23 ];
-        %tmp.153 = 100;
-        %tmp.154 = gt %tmp.152 %tmp.153;
-        bf %tmp.154 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_73_8_75_8_if_end;
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_73_8_75_8_if_true:
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_73_31_75_8_start:
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 74 12 ]
-        %tmp.155 = 100;
-        lputv %stepPercent.12 %tmp.155;
-        symbol [ stepPercent %stepPercent.12 74 12 23 ];
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_73_31_75_8_stop:
-        goto @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_73_8_75_8_if_end;
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_73_8_75_8_if_end:
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 77 8 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop" ]
-        %percentRounded.13 = local;
-        symbol [ percentRounded %percentRounded.13 77 12 26 ];
-        symbol [ Math %tmp.157 77 29 33 ];
-        %tmp.157 = getv ? :Math;
-        symbol [ round %tmp.158 77 34 39 ];
-        %tmp.158 = getv function %tmp.157 :round;
-        %tmp.159 = lgetv %stepPercent.12;
-        symbol [ stepPercent %tmp.159 77 40 51 ];
-        %tmp.160 = invoke %tmp.157 %tmp.158(%tmp.159);
-        lputv %percentRounded.13 %tmp.160;
-        symbol [ percentRounded %percentRounded.13 77 12 26 ];
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 78 4 ]
-        %tmp.161 = lgetv %stepView.11;
-        symbol [ stepView %tmp.161 78 4 12 ];
-        symbol [ setText %tmp.162 78 13 20 ];
-        %tmp.162 = getv function %tmp.161 :setText;
-        %tmp.163 = lgetv %percentRounded.13;
-        symbol [ percentRounded %tmp.163 78 21 35 ];
-        symbol [ toString %tmp.164 78 36 44 ];
-        %tmp.164 = getv function %tmp.163 :toString;
-        %tmp.165 = invoke %tmp.163 %tmp.164();
-        %tmp.166 = "% to goal";
-        %tmp.167 = add %tmp.165 %tmp.166;
-        invoke %tmp.161 %tmp.162(%tmp.167);
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 80 4 ]
-        symbol [ View %tmp.169 80 4 8 ];
-        %tmp.169 = getv ? :View;
-        symbol [ onUpdate %tmp.170 80 9 17 ];
-        %tmp.170 = getv function %tmp.169 :onUpdate;
-        %tmp.171 = lgetv %dc;
-        symbol [ dc %tmp.171 80 18 20 ];
-        invoke %tmp.169 %tmp.170(%tmp.171);
-C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_81_0_stop:
+        symbol [ View %tmp.114 63 4 8 ];
+        %tmp.114 = getv ? :View;
+        symbol [ onUpdate %tmp.115 63 9 17 ];
+        %tmp.115 = getv function %tmp.114 :onUpdate;
+        %tmp.116 = lgetv %dc;
+        symbol [ dc %tmp.116 63 18 20 ];
+        invoke %tmp.114 %tmp.115(%tmp.116);
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 65 0 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %batteryPct.7 = local;
+        symbol [ batteryPct %batteryPct.7 65 4 14 ];
+        symbol [ System %tmp.117 65 17 23 ];
+        %tmp.117 = getm $.Toybox.System;
+        symbol [ getSystemStats %tmp.118 65 24 38 ];
+        %tmp.118 = getv function %tmp.117 :getSystemStats;
+        %tmp.119 = invoke %tmp.117 %tmp.118();
+        symbol [ battery %tmp.120 65 41 48 ];
+        %tmp.120 = getv %tmp.119 :battery;
+        lputv %batteryPct.7 %tmp.120;
+        symbol [ batteryPct %batteryPct.7 65 4 14 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 66 0 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %barWidth.8 = local;
+        symbol [ barWidth %barWidth.8 66 4 12 ];
+        %tmp.121 = lgetv %dc;
+        symbol [ dc %tmp.121 66 15 17 ];
+        symbol [ getWidth %tmp.122 66 18 26 ];
+        %tmp.122 = getv function %tmp.121 :getWidth;
+        %tmp.123 = invoke %tmp.121 %tmp.122();
+        %tmp.124 = 100;
+        %tmp.125 = sub %tmp.123 %tmp.124;
+        lputv %barWidth.8 %tmp.125;
+        symbol [ barWidth %barWidth.8 66 4 12 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 67 0 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %barHeight.9 = local;
+        symbol [ barHeight %barHeight.9 67 4 13 ];
+        %tmp.126 = 6;
+        lputv %barHeight.9 %tmp.126;
+        symbol [ barHeight %barHeight.9 67 4 13 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 68 0 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %bx.10 = local;
+        symbol [ bx %bx.10 68 4 6 ];
+        %tmp.127 = 50;
+        lputv %bx.10 %tmp.127;
+        symbol [ bx %bx.10 68 4 6 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 69 0 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %by.11 = local;
+        symbol [ by %by.11 69 4 6 ];
+        %tmp.128 = lgetv %dc;
+        symbol [ dc %tmp.128 69 9 11 ];
+        symbol [ getHeight %tmp.129 69 12 21 ];
+        %tmp.129 = getv function %tmp.128 :getHeight;
+        %tmp.130 = invoke %tmp.128 %tmp.129();
+        %tmp.131 = lgetv %barHeight.9;
+        symbol [ barHeight %tmp.131 69 26 35 ];
+        %tmp.132 = sub %tmp.130 %tmp.131;
+        %tmp.133 = 25;
+        %tmp.134 = sub %tmp.132 %tmp.133;
+        lputv %by.11 %tmp.134;
+        symbol [ by %by.11 69 4 6 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 70 0 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %fillWidth.12 = local;
+        symbol [ fillWidth %fillWidth.12 70 4 13 ];
+        symbol [ Math %tmp.136 70 16 20 ];
+        %tmp.136 = getv ? :Math;
+        symbol [ floor %tmp.137 70 21 26 ];
+        %tmp.137 = getv function %tmp.136 :floor;
+        %tmp.138 = lgetv %barWidth.8;
+        symbol [ barWidth %tmp.138 70 27 35 ];
+        %tmp.139 = lgetv %batteryPct.7;
+        symbol [ batteryPct %tmp.139 70 39 49 ];
+        %tmp.140 = 100.0;
+        %tmp.141 = div %tmp.139 %tmp.140;
+        %tmp.142 = mul %tmp.138 %tmp.141;
+        %tmp.143 = invoke %tmp.136 %tmp.137(%tmp.142);
+        lputv %fillWidth.12 %tmp.143;
+        symbol [ fillWidth %fillWidth.12 70 4 13 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 72 0 ]
+        %tmp.144 = lgetv %dc;
+        symbol [ dc %tmp.144 72 0 2 ];
+        symbol [ setColor %tmp.145 72 3 11 ];
+        %tmp.145 = getv function %tmp.144 :setColor;
+        symbol [ Graphics %tmp.146 72 12 20 ];
+        %tmp.146 = getm $.Toybox.Graphics;
+        symbol [ COLOR_GREEN %tmp.147 72 21 32 ];
+        %tmp.147 = getv %tmp.146 :COLOR_GREEN;
+        symbol [ Graphics %tmp.148 72 34 42 ];
+        %tmp.148 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.149 72 43 54 ];
+        %tmp.149 = getv %tmp.148 :COLOR_BLACK;
+        invoke %tmp.144 %tmp.145(%tmp.147, %tmp.149);
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 75 0 ]
+        %tmp.150 = lgetv %dc;
+        symbol [ dc %tmp.150 75 0 2 ];
+        symbol [ drawLine %tmp.151 75 3 11 ];
+        %tmp.151 = getv function %tmp.150 :drawLine;
+        %tmp.152 = lgetv %bx.10;
+        symbol [ bx %tmp.152 75 12 14 ];
+        %tmp.153 = lgetv %by.11;
+        symbol [ by %tmp.153 75 16 18 ];
+        %tmp.154 = lgetv %bx.10;
+        symbol [ bx %tmp.154 75 20 22 ];
+        %tmp.155 = lgetv %barWidth.8;
+        symbol [ barWidth %tmp.155 75 25 33 ];
+        %tmp.156 = add %tmp.154 %tmp.155;
+        %tmp.157 = lgetv %by.11;
+        symbol [ by %tmp.157 75 35 37 ];
+        invoke %tmp.150 %tmp.151(%tmp.152, %tmp.153, %tmp.156, %tmp.157);
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 76 0 ]
+        %tmp.158 = lgetv %dc;
+        symbol [ dc %tmp.158 76 0 2 ];
+        symbol [ drawLine %tmp.159 76 3 11 ];
+        %tmp.159 = getv function %tmp.158 :drawLine;
+        %tmp.160 = lgetv %bx.10;
+        symbol [ bx %tmp.160 76 12 14 ];
+        %tmp.161 = lgetv %by.11;
+        symbol [ by %tmp.161 76 16 18 ];
+        %tmp.162 = lgetv %barHeight.9;
+        symbol [ barHeight %tmp.162 76 21 30 ];
+        %tmp.163 = add %tmp.161 %tmp.162;
+        %tmp.164 = lgetv %bx.10;
+        symbol [ bx %tmp.164 76 32 34 ];
+        %tmp.165 = lgetv %barWidth.8;
+        symbol [ barWidth %tmp.165 76 37 45 ];
+        %tmp.166 = add %tmp.164 %tmp.165;
+        %tmp.167 = lgetv %by.11;
+        symbol [ by %tmp.167 76 47 49 ];
+        %tmp.168 = lgetv %barHeight.9;
+        symbol [ barHeight %tmp.168 76 52 61 ];
+        %tmp.169 = add %tmp.167 %tmp.168;
+        invoke %tmp.158 %tmp.159(%tmp.160, %tmp.163, %tmp.166, %tmp.169);
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 77 0 ]
+        %tmp.170 = lgetv %dc;
+        symbol [ dc %tmp.170 77 0 2 ];
+        symbol [ drawLine %tmp.171 77 3 11 ];
+        %tmp.171 = getv function %tmp.170 :drawLine;
+        %tmp.172 = lgetv %bx.10;
+        symbol [ bx %tmp.172 77 12 14 ];
+        %tmp.173 = lgetv %by.11;
+        symbol [ by %tmp.173 77 16 18 ];
+        %tmp.174 = lgetv %bx.10;
+        symbol [ bx %tmp.174 77 20 22 ];
+        %tmp.175 = lgetv %by.11;
+        symbol [ by %tmp.175 77 24 26 ];
+        %tmp.176 = lgetv %barHeight.9;
+        symbol [ barHeight %tmp.176 77 29 38 ];
+        %tmp.177 = add %tmp.175 %tmp.176;
+        invoke %tmp.170 %tmp.171(%tmp.172, %tmp.173, %tmp.174, %tmp.177);
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 78 0 ]
+        %tmp.178 = lgetv %dc;
+        symbol [ dc %tmp.178 78 0 2 ];
+        symbol [ drawLine %tmp.179 78 3 11 ];
+        %tmp.179 = getv function %tmp.178 :drawLine;
+        %tmp.180 = lgetv %bx.10;
+        symbol [ bx %tmp.180 78 12 14 ];
+        %tmp.181 = lgetv %barWidth.8;
+        symbol [ barWidth %tmp.181 78 17 25 ];
+        %tmp.182 = add %tmp.180 %tmp.181;
+        %tmp.183 = lgetv %by.11;
+        symbol [ by %tmp.183 78 27 29 ];
+        %tmp.184 = lgetv %bx.10;
+        symbol [ bx %tmp.184 78 31 33 ];
+        %tmp.185 = lgetv %barWidth.8;
+        symbol [ barWidth %tmp.185 78 36 44 ];
+        %tmp.186 = add %tmp.184 %tmp.185;
+        %tmp.187 = lgetv %by.11;
+        symbol [ by %tmp.187 78 46 48 ];
+        %tmp.188 = lgetv %barHeight.9;
+        symbol [ barHeight %tmp.188 78 51 60 ];
+        %tmp.189 = add %tmp.187 %tmp.188;
+        invoke %tmp.178 %tmp.179(%tmp.182, %tmp.183, %tmp.186, %tmp.189);
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 81 0 ]
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_81_0_85_0_if_stmt:
+        %tmp.190 = lgetv %fillWidth.12;
+        symbol [ fillWidth %tmp.190 81 4 13 ];
+        %tmp.191 = 2;
+        %tmp.192 = gt %tmp.190 %tmp.191;
+        bf %tmp.192 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_81_0_85_0_if_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_81_0_85_0_if_true:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_81_19_85_0_start:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 82 4 ]
+        for @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_test @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_incr @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_init:
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_begin" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_end" ]
+        %fy.13 = local;
+        symbol [ fy %fy.13 82 13 15 ];
+        %tmp.193 = lgetv %by.11;
+        symbol [ by %tmp.193 82 18 20 ];
+        %tmp.194 = 1;
+        %tmp.195 = add %tmp.193 %tmp.194;
+        lputv %fy.13 %tmp.195;
+        symbol [ fy %fy.13 82 13 15 ];
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_test:
+        %tmp.196 = lgetv %fy.13;
+        symbol [ fy %tmp.196 82 26 28 ];
+        %tmp.197 = lgetv %by.11;
+        symbol [ by %tmp.197 82 31 33 ];
+        %tmp.198 = lgetv %barHeight.9;
+        symbol [ barHeight %tmp.198 82 36 45 ];
+        %tmp.199 = add %tmp.197 %tmp.198;
+        %tmp.200 = lt %tmp.196 %tmp.199;
+        bf %tmp.200 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_begin:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_56_84_4_start:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 83 8 ]
+        %tmp.201 = lgetv %dc;
+        symbol [ dc %tmp.201 83 8 10 ];
+        symbol [ drawLine %tmp.202 83 11 19 ];
+        %tmp.202 = getv function %tmp.201 :drawLine;
+        %tmp.203 = lgetv %bx.10;
+        symbol [ bx %tmp.203 83 20 22 ];
+        %tmp.204 = 1;
+        %tmp.205 = add %tmp.203 %tmp.204;
+        %tmp.206 = lgetv %fy.13;
+        symbol [ fy %tmp.206 83 28 30 ];
+        %tmp.207 = lgetv %bx.10;
+        symbol [ bx %tmp.207 83 32 34 ];
+        %tmp.208 = lgetv %fillWidth.12;
+        symbol [ fillWidth %tmp.208 83 37 46 ];
+        %tmp.209 = add %tmp.207 %tmp.208;
+        %tmp.210 = 1;
+        %tmp.211 = sub %tmp.209 %tmp.210;
+        %tmp.212 = lgetv %fy.13;
+        symbol [ fy %tmp.212 83 52 54 ];
+        invoke %tmp.201 %tmp.202(%tmp.205, %tmp.206, %tmp.211, %tmp.212);
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_56_84_4_stop:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_incr:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 82 ]
+        %tmp.213 = lgetv %fy.13;
+        symbol [ fy %tmp.213 82 47 49 ];
+        %tmp.214 = 1;
+        %tmp.215 = add %tmp.213 %tmp.214;
+        lputv %fy.13 %tmp.215;
+        symbol [ fy %fy.13 82 47 49 ];
+        goto @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_test;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_82_4_84_4_for_end:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_81_19_85_0_stop:
+        goto @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_81_0_85_0_if_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_81_0_85_0_if_end:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 86 2 ]
+        %tmp.216 = lgetv %dc;
+        symbol [ dc %tmp.216 86 2 4 ];
+        symbol [ setColor %tmp.217 86 5 13 ];
+        %tmp.217 = getv function %tmp.216 :setColor;
+        symbol [ Graphics %tmp.218 86 14 22 ];
+        %tmp.218 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.219 86 23 34 ];
+        %tmp.219 = getv %tmp.218 :COLOR_WHITE;
+        symbol [ Graphics %tmp.220 86 36 44 ];
+        %tmp.220 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.221 86 45 56 ];
+        %tmp.221 = getv %tmp.220 :COLOR_BLACK;
+        invoke %tmp.216 %tmp.217(%tmp.219, %tmp.221);
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 88 4 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %clockTime.14 = local;
+        symbol [ clockTime %clockTime.14 88 8 17 ];
+        symbol [ System %tmp.222 88 20 26 ];
+        %tmp.222 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.223 88 27 39 ];
+        %tmp.223 = getv function %tmp.222 :getClockTime;
+        %tmp.224 = invoke %tmp.222 %tmp.223();
+        lputv %clockTime.14 %tmp.224;
+        symbol [ clockTime %clockTime.14 88 8 17 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 89 4 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %timeString.15 = local;
+        symbol [ timeString %timeString.15 89 8 18 ];
+        symbol [ Lang %tmp.225 89 21 25 ];
+        %tmp.225 = getm $.Toybox.Lang;
+        symbol [ format %tmp.226 89 26 32 ];
+        %tmp.226 = getv function %tmp.225 :format;
+        %tmp.227 = "$1$:$2$";
+        %tmp.228 = newa 2;
+        %tmp.229 = lgetv %clockTime.14;
+        symbol [ clockTime %tmp.229 90 9 18 ];
+        symbol [ hour %tmp.230 90 19 23 ];
+        %tmp.230 = getv %tmp.229 :hour;
+        %tmp.231 = dup %tmp.228;
+        %tmp.232 = aputv %tmp.231 0 %tmp.230;
+        %tmp.233 = lgetv %clockTime.14;
+        symbol [ clockTime %tmp.233 90 25 34 ];
+        symbol [ min %tmp.234 90 35 38 ];
+        %tmp.234 = getv %tmp.233 :min;
+        symbol [ format %tmp.235 90 39 45 ];
+        %tmp.235 = getv function %tmp.234 :format;
+        %tmp.236 = "%02d";
+        %tmp.237 = invoke %tmp.234 %tmp.235(%tmp.236);
+        %tmp.238 = dup %tmp.232;
+        %tmp.239 = aputv %tmp.238 1 %tmp.237;
+        %tmp.240 = invoke %tmp.225 %tmp.226(%tmp.227, %tmp.239);
+        lputv %timeString.15 %tmp.240;
+        symbol [ timeString %timeString.15 89 8 18 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 92 4 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %cx.16 = local;
+        symbol [ cx %cx.16 92 8 10 ];
+        %tmp.241 = lgetv %dc;
+        symbol [ dc %tmp.241 92 13 15 ];
+        symbol [ getWidth %tmp.242 92 16 24 ];
+        %tmp.242 = getv function %tmp.241 :getWidth;
+        %tmp.243 = invoke %tmp.241 %tmp.242();
+        %tmp.244 = 2;
+        %tmp.245 = div %tmp.243 %tmp.244;
+        lputv %cx.16 %tmp.245;
+        symbol [ cx %cx.16 92 8 10 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 93 4 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %cy.17 = local;
+        symbol [ cy %cy.17 93 8 10 ];
+        %tmp.246 = 90;
+        lputv %cy.17 %tmp.246;
+        symbol [ cy %cy.17 93 8 10 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 94 4 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %font.18 = local;
+        symbol [ font %font.18 94 8 12 ];
+        symbol [ Graphics %tmp.247 94 15 23 ];
+        %tmp.247 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.248 94 24 34 ];
+        %tmp.248 = getv %tmp.247 :FONT_LARGE;
+        lputv %font.18 %tmp.248;
+        symbol [ font %font.18 94 8 12 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 98 4 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop" ]
+        %offsets.19 = local;
+        symbol [ offsets %offsets.19 98 8 15 ];
+        %tmp.249 = newa 5;
+        %tmp.250 = -2;
+        %tmp.251 = dup %tmp.249;
+        %tmp.252 = aputv %tmp.251 0 %tmp.250;
+        %tmp.253 = -1;
+        %tmp.254 = dup %tmp.252;
+        %tmp.255 = aputv %tmp.254 1 %tmp.253;
+        %tmp.256 = 0;
+        %tmp.257 = dup %tmp.255;
+        %tmp.258 = aputv %tmp.257 2 %tmp.256;
+        %tmp.259 = 1;
+        %tmp.260 = dup %tmp.258;
+        %tmp.261 = aputv %tmp.260 3 %tmp.259;
+        %tmp.262 = 2;
+        %tmp.263 = dup %tmp.261;
+        %tmp.264 = aputv %tmp.263 4 %tmp.262;
+        lputv %offsets.19 %tmp.264;
+        symbol [ offsets %offsets.19 98 8 15 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 99 4 ]
+        for @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_test @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_incr @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_init:
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_begin" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_end" ]
+        %i.20 = local;
+        symbol [ i %i.20 99 13 14 ];
+        %tmp.265 = 0;
+        lputv %i.20 %tmp.265;
+        symbol [ i %i.20 99 13 14 ];
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_test:
+        %tmp.266 = lgetv %i.20;
+        symbol [ i %tmp.266 99 20 21 ];
+        %tmp.267 = lgetv %offsets.19;
+        symbol [ offsets %tmp.267 99 24 31 ];
+        symbol [ size %tmp.268 99 32 36 ];
+        %tmp.268 = getv function %tmp.267 :size;
+        %tmp.269 = invoke %tmp.267 %tmp.268();
+        %tmp.270 = lt %tmp.266 %tmp.269;
+        bf %tmp.270 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_begin:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_48_107_0_start:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 100 4 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_48_107_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_48_107_0_stop" ]
+        %dx.21 = local;
+        symbol [ dx %dx.21 100 8 10 ];
+        %tmp.271 = lgetv %offsets.19;
+        symbol [ offsets %tmp.271 100 13 20 ];
+        %tmp.272 = lgetv %i.20;
+        symbol [ i %tmp.272 100 21 22 ];
+        %tmp.273 = agetv %tmp.271 %tmp.272;
+        lputv %dx.21 %tmp.273;
+        symbol [ dx %dx.21 100 8 10 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 101 4 ]
+        for @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_test @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_incr @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_init:
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_begin" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_end" ]
+        %j.22 = local;
+        symbol [ j %j.22 101 13 14 ];
+        %tmp.274 = 0;
+        lputv %j.22 %tmp.274;
+        symbol [ j %j.22 101 13 14 ];
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_test:
+        %tmp.275 = lgetv %j.22;
+        symbol [ j %tmp.275 101 20 21 ];
+        %tmp.276 = lgetv %offsets.19;
+        symbol [ offsets %tmp.276 101 24 31 ];
+        symbol [ size %tmp.277 101 32 36 ];
+        %tmp.277 = getv function %tmp.276 :size;
+        %tmp.278 = invoke %tmp.276 %tmp.277();
+        %tmp.279 = lt %tmp.275 %tmp.278;
+        bf %tmp.279 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_begin:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_48_106_4_start:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 102 8 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_48_106_4_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_48_106_4_stop" ]
+        %dy.23 = local;
+        symbol [ dy %dy.23 102 12 14 ];
+        %tmp.280 = lgetv %offsets.19;
+        symbol [ offsets %tmp.280 102 17 24 ];
+        %tmp.281 = lgetv %j.22;
+        symbol [ j %tmp.281 102 25 26 ];
+        %tmp.282 = agetv %tmp.280 %tmp.281;
+        lputv %dy.23 %tmp.282;
+        symbol [ dy %dy.23 102 12 14 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 103 8 ]
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_8_105_8_if_stmt:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_14_103_31_begin:
+        %tmp.283 = lgetv %dx.21;
+        symbol [ dx %tmp.283 103 14 16 ];
+        %tmp.284 = 0;
+        %tmp.285 = eq %tmp.283 %tmp.284;
+        %tmp.286 = dup %tmp.285;
+        bf %tmp.286 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_25_103_31_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_25_103_31_true:
+        %tmp.287 = lgetv %dy.23;
+        symbol [ dy %tmp.287 103 25 27 ];
+        %tmp.288 = 0;
+        %tmp.289 = eq %tmp.287 %tmp.288;
+        %tmp.290 = and %tmp.285 %tmp.289;
+        push %tmp.290;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_25_103_31_end:
+        %tmp.291 = phi [%tmp.286 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_14_103_31_begin] [%tmp.290 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_25_103_31_true] [%tmp.291 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_25_103_31_end];
+        %tmp.292 = not %tmp.291;
+        bf %tmp.292 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_8_105_8_if_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_8_105_8_if_true:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_35_105_8_start:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 104 12 ]
+        %tmp.293 = lgetv %dc;
+        symbol [ dc %tmp.293 104 12 14 ];
+        symbol [ drawText %tmp.294 104 15 23 ];
+        %tmp.294 = getv function %tmp.293 :drawText;
+        %tmp.295 = lgetv %cx.16;
+        symbol [ cx %tmp.295 104 24 26 ];
+        %tmp.296 = lgetv %dx.21;
+        symbol [ dx %tmp.296 104 29 31 ];
+        %tmp.297 = add %tmp.295 %tmp.296;
+        %tmp.298 = lgetv %cy.17;
+        symbol [ cy %tmp.298 104 33 35 ];
+        %tmp.299 = lgetv %dy.23;
+        symbol [ dy %tmp.299 104 38 40 ];
+        %tmp.300 = add %tmp.298 %tmp.299;
+        %tmp.301 = lgetv %font.18;
+        symbol [ font %tmp.301 104 42 46 ];
+        %tmp.302 = lgetv %timeString.15;
+        symbol [ timeString %tmp.302 104 48 58 ];
+        symbol [ Graphics %tmp.303 104 60 68 ];
+        %tmp.303 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.304 104 69 88 ];
+        %tmp.304 = getv %tmp.303 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.293 %tmp.294(%tmp.297, %tmp.300, %tmp.301, %tmp.302, %tmp.304);
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_35_105_8_stop:
+        goto @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_8_105_8_if_end;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_103_8_105_8_if_end:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_48_106_4_stop:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_incr:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 101 ]
+        %tmp.305 = lgetv %j.22;
+        symbol [ j %tmp.305 101 40 41 ];
+        %tmp.306 = 1;
+        %tmp.307 = add %tmp.305 %tmp.306;
+        lputv %j.22 %tmp.307;
+        symbol [ j %j.22 101 40 41 ];
+        goto @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_test;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_101_4_106_4_for_end:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_48_107_0_stop:
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_incr:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 99 ]
+        %tmp.308 = lgetv %i.20;
+        symbol [ i %tmp.308 99 40 41 ];
+        %tmp.309 = 1;
+        %tmp.310 = add %tmp.308 %tmp.309;
+        lputv %i.20 %tmp.310;
+        symbol [ i %i.20 99 40 41 ];
+        goto @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_test;
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_99_4_107_0_for_end:
+[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 111 4 ]
+        %tmp.311 = lgetv %dc;
+        symbol [ dc %tmp.311 111 4 6 ];
+        symbol [ drawText %tmp.312 111 7 15 ];
+        %tmp.312 = getv function %tmp.311 :drawText;
+        %tmp.313 = lgetv %cx.16;
+        symbol [ cx %tmp.313 111 16 18 ];
+        %tmp.314 = lgetv %cy.17;
+        symbol [ cy %tmp.314 111 20 22 ];
+        %tmp.315 = lgetv %font.18;
+        symbol [ font %tmp.315 111 24 28 ];
+        %tmp.316 = lgetv %timeString.15;
+        symbol [ timeString %tmp.316 111 30 40 ];
+        symbol [ Graphics %tmp.317 111 42 50 ];
+        %tmp.317 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.318 111 51 70 ];
+        %tmp.318 = getv %tmp.317 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.311 %tmp.312(%tmp.313, %tmp.314, %tmp.315, %tmp.316, %tmp.318);
+C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_31_40_115_0_stop:
     }
-    [ @file = "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc"; @line = 88; @symbol_functiondef = [onHide,88,13,19]; ]
+    [ @file = "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc"; @line = 122; @symbol_functiondef = [onHide,122,13,19]; ]
     function onHide() as Void {
     }
-    [ @file = "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc"; @line = 92; @symbol_functiondef = [onExitSleep,92,13,24]; ]
+    [ @file = "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc"; @line = 126; @symbol_functiondef = [onExitSleep,126,13,24]; ]
     function onExitSleep() as Void {
     }
-    [ @file = "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc"; @line = 96; @symbol_functiondef = [onEnterSleep,96,13,25]; ]
+    [ @file = "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc"; @line = 130; @symbol_functiondef = [onEnterSleep,130,13,25]; ]
     function onEnterSleep() as Void {
     }
 }
