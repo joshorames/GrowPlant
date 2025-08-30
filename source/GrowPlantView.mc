@@ -8,6 +8,8 @@ class GrowPlantView extends WatchUi.WatchFace {
     var flowerStage2 as Graphics.Bitmap;
     var flowerStage3 as Graphics.Bitmap;
     var flowerStage4 as Graphics.Bitmap;
+    var flowerStage5 as Graphics.Bitmap;
+    var flowerStage6 as Graphics.Bitmap;
 
     function initialize() {
         WatchFace.initialize();
@@ -32,14 +34,18 @@ class GrowPlantView extends WatchUi.WatchFace {
     var percent = (goal > 0) ? steps * 1.0 / goal : 0.0;
 
     // Switch layout based on step progress
-    if (percent < 0.25) {
+    if (percent < 0.17) {
         setLayout(Rez.Layouts.FlowerStage1Layout(dc));
-    } else if (percent < 0.50) {
+    } else if (percent < 0.34) {
         setLayout(Rez.Layouts.FlowerStage2Layout(dc));
-    } else if (percent < 0.75) {
+    } else if (percent < 0.51) {
         setLayout(Rez.Layouts.FlowerStage3Layout(dc));
-    } else {
+    } else if (percent < 0.68) {
         setLayout(Rez.Layouts.FlowerStage4Layout(dc));
+    } else if (percent < 0.85) {
+        setLayout(Rez.Layouts.FlowerStage5Layout(dc));
+    } else {
+        setLayout(Rez.Layouts.FlowerStage6Layout(dc));
     }
 
     // === BATTERY ===

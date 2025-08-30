@@ -1,31 +1,45 @@
 <resources>
     <layouts>
         <layout id="FlowerStage1Layout">
-            <bitmap id="FlowerStage" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
-            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <bitmap id="FlowerStage" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
+            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" text="200%"/>
             <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-            <label id="BatteryLabel" x="center" y="100" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
+            <label id="BatteryLabel" x="center" y="120" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
         </layout>
 
         <layout id="FlowerStage2Layout">
-            <bitmap id="FlowerStage1" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower1.png"/>
-            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <bitmap id="FlowerStage1" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower1.png"/>
+            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" text="200%"/>
             <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-            <label id="BatteryLabel" x="center" y="100" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
+            <label id="BatteryLabel" x="center" y="120" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
         </layout>
 
         <layout id="FlowerStage3Layout">
-            <bitmap id="FlowerStage2" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower2.png"/>
-            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <bitmap id="FlowerStage2" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower2.png"/>
+            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" text="200%"/>
             <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-            <label id="BatteryLabel" x="center" y="100" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
+            <label id="BatteryLabel" x="center" y="120" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
         </layout>
 
         <layout id="FlowerStage4Layout">
-            <bitmap id="FlowerStage3" x="center" y="center" filename="C:\Users\josho\Desktop\GrowPlant\images\flower3.png"/>
-            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <bitmap id="FlowerStage3" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower3.png"/>
+            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" text="200%"/>
             <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-            <label id="BatteryLabel" x="center" y="100" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
+            <label id="BatteryLabel" x="center" y="120" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
+        </layout>
+
+        <layout id="FlowerStage5Layout">
+            <bitmap id="FlowerStage4" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower4.png"/>
+            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" text="200%"/>
+            <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <label id="BatteryLabel" x="center" y="120" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
+        </layout>
+
+        <layout id="FlowerStage6Layout">
+            <bitmap id="FlowerStage5" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower5.png"/>
+            <label id="TimeLabel" x="center" y="60" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" text="200%"/>
+            <label id="StepLabel" x="center" y="150" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
+            <label id="BatteryLabel" x="center" y="120" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" text="100%"/>
         </layout>
     </layouts>
 </resources>
