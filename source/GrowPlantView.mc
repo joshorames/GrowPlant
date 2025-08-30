@@ -2,8 +2,8 @@ import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.System;
 import Toybox.WatchUi;
-using Toybox.Time.Gregorian;
-using Toybox.Time;
+using Toybox.Time as Time;
+using Toybox.Time.Gregorian as Gregorian;
 
 class GrowPlantView extends WatchUi.WatchFace {
     var flowerStage1 as Graphics.Bitmap;
@@ -92,8 +92,8 @@ if (fillWidth > 2) { // avoid negative width
     if (clockTimeText == 0) {
         clockTimeText = 12; // 12-hour format
     }
-    var timeString = Lang.format("$1$:$2$:$3$ $4$", 
-        [clockTimeText, clockTime.min.format("%02d"), clockTime.sec.format("%02d"), clockTime.hour<12 ? "AM" : "PM"]);
+    var timeString = Lang.format("$1$:$2$ $3$", 
+        [clockTimeText, clockTime.min.format("%02d"), clockTime.hour<12 ? "AM" : "PM"]);
 
     var cx = dc.getWidth() / 2;
     var cy = 90; // vertical center
@@ -115,6 +115,31 @@ if (fillWidth > 2) { // avoid negative width
 
     // Draw main crisp text on top
     dc.drawText(cx, cy, font, timeString, Graphics.TEXT_JUSTIFY_CENTER);
+
+    // Defensive check: day_of_week can be 0–6, month 1–12
+    // ===== DATE =====
+    var now = Time.now(); // "Moment" object
+    var dateInfo = Gregorian.info(now, Time.FORMAT_SHORT);
+
+    var weekdays = ["?", "Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+var months   = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+var weekdayName = (dateInfo.day_of_week >= 1 && dateInfo.day_of_week <= 7) 
+    ? weekdays[dateInfo.day_of_week] 
+    : "?";
+
+var monthName = (dateInfo.month >= 1 && dateInfo.month <= 12) 
+    ? months[dateInfo.month-1] 
+    : "?";
+
+var dateString = Lang.format("$1$, $2$ $3$", [
+    weekdayName,
+    monthName,
+    dateInfo.day
+]);
+
+
+    dc.drawText(cx, cy + 30, Graphics.FONT_XTINY, dateString, Graphics.TEXT_JUSTIFY_CENTER);
     
 }
 
