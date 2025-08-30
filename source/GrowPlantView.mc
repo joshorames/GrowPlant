@@ -60,7 +60,7 @@ class GrowPlantView extends WatchUi.WatchFace {
     timeView.setText(timeString);
 
      // Update step label
-    var stepString = Lang.format("$1$ / $2$ steps", [steps, goal]);
+    //var stepString = Lang.format("$1$ / $2$ steps", [steps, goal]);
     var stepView = View.findDrawableById("StepLabel") as Text;
     // Calculate percent
         var stepPercent = (steps * 100.0 / goal).toNumber();

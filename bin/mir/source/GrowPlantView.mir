@@ -345,107 +345,86 @@ C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_51_8_53_8_if_end:
         %tmp.116 = lgetv %timeString.9;
         symbol [ timeString %tmp.116 60 21 31 ];
         invoke %tmp.114 %tmp.115(%tmp.116);
-[ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 63 4 ]
-        [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_29_40_75_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_29_40_75_0_stop" ]
-        %stepString.11 = local;
-        symbol [ stepString %stepString.11 63 8 18 ];
-        symbol [ Lang %tmp.117 63 21 25 ];
-        %tmp.117 = getm $.Toybox.Lang;
-        symbol [ format %tmp.118 63 26 32 ];
-        %tmp.118 = getv function %tmp.117 :format;
-        %tmp.119 = "$1$ / $2$ steps";
-        %tmp.120 = newa 2;
-        %tmp.121 = lgetv %steps.1;
-        symbol [ steps %tmp.121 63 53 58 ];
-        %tmp.122 = dup %tmp.120;
-        %tmp.123 = aputv %tmp.122 0 %tmp.121;
-        %tmp.124 = lgetv %goal.2;
-        symbol [ goal %tmp.124 63 60 64 ];
-        %tmp.125 = dup %tmp.123;
-        %tmp.126 = aputv %tmp.125 1 %tmp.124;
-        %tmp.127 = invoke %tmp.117 %tmp.118(%tmp.119, %tmp.126);
-        lputv %stepString.11 %tmp.127;
-        symbol [ stepString %stepString.11 63 8 18 ];
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 64 4 ]
         [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_29_40_75_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_29_40_75_0_stop" ]
-        %stepView.12 = local;
-        symbol [ stepView %stepView.12 64 8 16 ];
-        symbol [ View %tmp.129 64 19 23 ];
-        %tmp.129 = getv ? :View;
-        symbol [ findDrawableById %tmp.130 64 24 40 ];
-        %tmp.130 = getv function %tmp.129 :findDrawableById;
-        %tmp.131 = "StepLabel";
-        %tmp.132 = invoke %tmp.129 %tmp.130(%tmp.131);
-        %tmp.133 = as %tmp.132 Text;
-        symbol [ Text %tmp.133 64 57 61 ];
-        lputv %stepView.12 %tmp.133;
-        symbol [ stepView %stepView.12 64 8 16 ];
+        %stepView.11 = local;
+        symbol [ stepView %stepView.11 64 8 16 ];
+        symbol [ View %tmp.118 64 19 23 ];
+        %tmp.118 = getv ? :View;
+        symbol [ findDrawableById %tmp.119 64 24 40 ];
+        %tmp.119 = getv function %tmp.118 :findDrawableById;
+        %tmp.120 = "StepLabel";
+        %tmp.121 = invoke %tmp.118 %tmp.119(%tmp.120);
+        %tmp.122 = as %tmp.121 Text;
+        symbol [ Text %tmp.122 64 57 61 ];
+        lputv %stepView.11 %tmp.122;
+        symbol [ stepView %stepView.11 64 8 16 ];
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 66 8 ]
         [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_29_40_75_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_29_40_75_0_stop" ]
-        %stepPercent.13 = local;
-        symbol [ stepPercent %stepPercent.13 66 12 23 ];
-        %tmp.134 = lgetv %steps.1;
-        symbol [ steps %tmp.134 66 27 32 ];
-        %tmp.135 = 100.0;
-        %tmp.136 = mul %tmp.134 %tmp.135;
-        %tmp.137 = lgetv %goal.2;
-        symbol [ goal %tmp.137 66 43 47 ];
-        %tmp.138 = div %tmp.136 %tmp.137;
-        symbol [ toNumber %tmp.139 66 49 57 ];
-        %tmp.139 = getv function %tmp.138 :toNumber;
-        %tmp.140 = invoke %tmp.138 %tmp.139();
-        lputv %stepPercent.13 %tmp.140;
-        symbol [ stepPercent %stepPercent.13 66 12 23 ];
+        %stepPercent.12 = local;
+        symbol [ stepPercent %stepPercent.12 66 12 23 ];
+        %tmp.123 = lgetv %steps.1;
+        symbol [ steps %tmp.123 66 27 32 ];
+        %tmp.124 = 100.0;
+        %tmp.125 = mul %tmp.123 %tmp.124;
+        %tmp.126 = lgetv %goal.2;
+        symbol [ goal %tmp.126 66 43 47 ];
+        %tmp.127 = div %tmp.125 %tmp.126;
+        symbol [ toNumber %tmp.128 66 49 57 ];
+        %tmp.128 = getv function %tmp.127 :toNumber;
+        %tmp.129 = invoke %tmp.127 %tmp.128();
+        lputv %stepPercent.12 %tmp.129;
+        symbol [ stepPercent %stepPercent.12 66 12 23 ];
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 67 8 ]
 C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_67_8_69_8_if_stmt:
-        %tmp.141 = lgetv %stepPercent.13;
-        symbol [ stepPercent %tmp.141 67 12 23 ];
-        %tmp.142 = 100;
-        %tmp.143 = gt %tmp.141 %tmp.142;
-        bf %tmp.143 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_67_8_69_8_if_end;
+        %tmp.130 = lgetv %stepPercent.12;
+        symbol [ stepPercent %tmp.130 67 12 23 ];
+        %tmp.131 = 100;
+        %tmp.132 = gt %tmp.130 %tmp.131;
+        bf %tmp.132 @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_67_8_69_8_if_end;
 C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_67_8_69_8_if_true:
 C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_67_31_69_8_start:
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 68 12 ]
-        %tmp.144 = 100;
-        lputv %stepPercent.13 %tmp.144;
-        symbol [ stepPercent %stepPercent.13 68 12 23 ];
+        %tmp.133 = 100;
+        lputv %stepPercent.12 %tmp.133;
+        symbol [ stepPercent %stepPercent.12 68 12 23 ];
 C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_67_31_69_8_stop:
         goto @C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_67_8_69_8_if_end;
 C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_67_8_69_8_if_end:
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 71 8 ]
         [ "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_29_40_75_0_start" "C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_29_40_75_0_stop" ]
-        %percentRounded.14 = local;
-        symbol [ percentRounded %percentRounded.14 71 12 26 ];
-        symbol [ Math %tmp.146 71 29 33 ];
-        %tmp.146 = getv ? :Math;
-        symbol [ round %tmp.147 71 34 39 ];
-        %tmp.147 = getv function %tmp.146 :round;
-        %tmp.148 = lgetv %stepPercent.13;
-        symbol [ stepPercent %tmp.148 71 40 51 ];
-        %tmp.149 = invoke %tmp.146 %tmp.147(%tmp.148);
-        lputv %percentRounded.14 %tmp.149;
-        symbol [ percentRounded %percentRounded.14 71 12 26 ];
+        %percentRounded.13 = local;
+        symbol [ percentRounded %percentRounded.13 71 12 26 ];
+        symbol [ Math %tmp.135 71 29 33 ];
+        %tmp.135 = getv ? :Math;
+        symbol [ round %tmp.136 71 34 39 ];
+        %tmp.136 = getv function %tmp.135 :round;
+        %tmp.137 = lgetv %stepPercent.12;
+        symbol [ stepPercent %tmp.137 71 40 51 ];
+        %tmp.138 = invoke %tmp.135 %tmp.136(%tmp.137);
+        lputv %percentRounded.13 %tmp.138;
+        symbol [ percentRounded %percentRounded.13 71 12 26 ];
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 72 4 ]
-        %tmp.150 = lgetv %stepView.12;
-        symbol [ stepView %tmp.150 72 4 12 ];
-        symbol [ setText %tmp.151 72 13 20 ];
-        %tmp.151 = getv function %tmp.150 :setText;
-        %tmp.152 = lgetv %percentRounded.14;
-        symbol [ percentRounded %tmp.152 72 21 35 ];
-        symbol [ toString %tmp.153 72 36 44 ];
-        %tmp.153 = getv function %tmp.152 :toString;
-        %tmp.154 = invoke %tmp.152 %tmp.153();
-        %tmp.155 = "% to goal";
-        %tmp.156 = add %tmp.154 %tmp.155;
-        invoke %tmp.150 %tmp.151(%tmp.156);
+        %tmp.139 = lgetv %stepView.11;
+        symbol [ stepView %tmp.139 72 4 12 ];
+        symbol [ setText %tmp.140 72 13 20 ];
+        %tmp.140 = getv function %tmp.139 :setText;
+        %tmp.141 = lgetv %percentRounded.13;
+        symbol [ percentRounded %tmp.141 72 21 35 ];
+        symbol [ toString %tmp.142 72 36 44 ];
+        %tmp.142 = getv function %tmp.141 :toString;
+        %tmp.143 = invoke %tmp.141 %tmp.142();
+        %tmp.144 = "% to goal";
+        %tmp.145 = add %tmp.143 %tmp.144;
+        invoke %tmp.139 %tmp.140(%tmp.145);
 [ "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc" 74 4 ]
-        symbol [ View %tmp.158 74 4 8 ];
-        %tmp.158 = getv ? :View;
-        symbol [ onUpdate %tmp.159 74 9 17 ];
-        %tmp.159 = getv function %tmp.158 :onUpdate;
-        %tmp.160 = lgetv %dc;
-        symbol [ dc %tmp.160 74 18 20 ];
-        invoke %tmp.158 %tmp.159(%tmp.160);
+        symbol [ View %tmp.147 74 4 8 ];
+        %tmp.147 = getv ? :View;
+        symbol [ onUpdate %tmp.148 74 9 17 ];
+        %tmp.148 = getv function %tmp.147 :onUpdate;
+        %tmp.149 = lgetv %dc;
+        symbol [ dc %tmp.149 74 18 20 ];
+        invoke %tmp.147 %tmp.148(%tmp.149);
 C__Users_josho_Desktop_GrowPlant_source_GrowPlantView_mc_29_40_75_0_stop:
     }
     [ @file = "C:\Users\josho\Desktop\GrowPlant\source\GrowPlantView.mc"; @line = 82; @symbol_functiondef = [onHide,82,13,19]; ]
