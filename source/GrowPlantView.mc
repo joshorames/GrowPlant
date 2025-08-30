@@ -2,6 +2,8 @@ import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.System;
 import Toybox.WatchUi;
+using Toybox.Time.Gregorian;
+using Toybox.Time;
 
 class GrowPlantView extends WatchUi.WatchFace {
     var flowerStage1 as Graphics.Bitmap;
@@ -86,8 +88,12 @@ if (fillWidth > 2) { // avoid negative width
   dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
     // --- Draw big readable time ---
     var clockTime = System.getClockTime();
-    var timeString = Lang.format("$1$:$2$", 
-        [clockTime.hour, clockTime.min.format("%02d")]);
+    var clockTimeText = clockTime.hour%12;
+    if (clockTimeText == 0) {
+        clockTimeText = 12; // 12-hour format
+    }
+    var timeString = Lang.format("$1$:$2$:$3$ $4$", 
+        [clockTimeText, clockTime.min.format("%02d"), clockTime.sec.format("%02d"), clockTime.hour<12 ? "AM" : "PM"]);
 
     var cx = dc.getWidth() / 2;
     var cy = 90; // vertical center
@@ -95,7 +101,7 @@ if (fillWidth > 2) { // avoid negative width
 
     // Auto-scale width based on digits (fake scaling)
     // Draw each digit slightly offset horizontally and vertically
-    var offsets = [-2, -1, 0, 1, 2]; // wider spacing for boldness
+    var offsets = [-1, -1, 0, 1, 1]; // wider spacing for boldness
     for (var i = 0; i < offsets.size(); i += 1) {
     var dx = offsets[i];
     for (var j = 0; j < offsets.size(); j += 1) {
@@ -109,8 +115,6 @@ if (fillWidth > 2) { // avoid negative width
 
     // Draw main crisp text on top
     dc.drawText(cx, cy, font, timeString, Graphics.TEXT_JUSTIFY_CENTER);
-
-
     
 }
 
