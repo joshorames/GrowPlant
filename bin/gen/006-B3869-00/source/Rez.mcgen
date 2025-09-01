@@ -17,7 +17,7 @@ module Rez {
 
     module Layouts {
         function FlowerStage1Layout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
-            var rez_cmp_local_bitmap_FlowerStage = new WatchUi.Bitmap({:identifier=>"FlowerStage", :rezId=>$.Rez.Drawables.FlowerStage, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>15});
+            var rez_cmp_local_bitmap_FlowerStage = new WatchUi.Bitmap({:identifier=>"FlowerStage", :rezId=>$.Rez.Drawables.FlowerStage, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>50});
             rez_cmp_local_bitmap_FlowerStage.setLocation(((208 - rez_cmp_local_bitmap_FlowerStage.width) * 0.5), rez_cmp_local_bitmap_FlowerStage.locY);
 
             var rez_cmp_local_text_StepLabel = new WatchUi.Text({:identifier=>"StepLabel", :locX=>(208 * 0.5), :locY=>145, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_SMALL});
@@ -26,7 +26,7 @@ module Rez {
         }
 
         function FlowerStage2Layout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
-            var rez_cmp_local_bitmap_FlowerStage1 = new WatchUi.Bitmap({:identifier=>"FlowerStage1", :rezId=>$.Rez.Drawables.FlowerStage1, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>15});
+            var rez_cmp_local_bitmap_FlowerStage1 = new WatchUi.Bitmap({:identifier=>"FlowerStage1", :rezId=>$.Rez.Drawables.FlowerStage1, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>50});
             rez_cmp_local_bitmap_FlowerStage1.setLocation(((208 - rez_cmp_local_bitmap_FlowerStage1.width) * 0.5), rez_cmp_local_bitmap_FlowerStage1.locY);
 
             var rez_cmp_local_text_StepLabel = new WatchUi.Text({:identifier=>"StepLabel", :locX=>(208 * 0.5), :locY=>145, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_SMALL});
@@ -35,7 +35,7 @@ module Rez {
         }
 
         function FlowerStage3Layout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
-            var rez_cmp_local_bitmap_FlowerStage2 = new WatchUi.Bitmap({:identifier=>"FlowerStage2", :rezId=>$.Rez.Drawables.FlowerStage2, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>15});
+            var rez_cmp_local_bitmap_FlowerStage2 = new WatchUi.Bitmap({:identifier=>"FlowerStage2", :rezId=>$.Rez.Drawables.FlowerStage2, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>50});
             rez_cmp_local_bitmap_FlowerStage2.setLocation(((208 - rez_cmp_local_bitmap_FlowerStage2.width) * 0.5), rez_cmp_local_bitmap_FlowerStage2.locY);
 
             var rez_cmp_local_text_StepLabel = new WatchUi.Text({:identifier=>"StepLabel", :locX=>(208 * 0.5), :locY=>145, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_SMALL});
@@ -44,7 +44,7 @@ module Rez {
         }
 
         function FlowerStage4Layout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
-            var rez_cmp_local_bitmap_FlowerStage3 = new WatchUi.Bitmap({:identifier=>"FlowerStage3", :rezId=>$.Rez.Drawables.FlowerStage3, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>15});
+            var rez_cmp_local_bitmap_FlowerStage3 = new WatchUi.Bitmap({:identifier=>"FlowerStage3", :rezId=>$.Rez.Drawables.FlowerStage3, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>50});
             rez_cmp_local_bitmap_FlowerStage3.setLocation(((208 - rez_cmp_local_bitmap_FlowerStage3.width) * 0.5), rez_cmp_local_bitmap_FlowerStage3.locY);
 
             var rez_cmp_local_text_StepLabel = new WatchUi.Text({:identifier=>"StepLabel", :locX=>(208 * 0.5), :locY=>145, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_SMALL});
@@ -53,7 +53,7 @@ module Rez {
         }
 
         function FlowerStage5Layout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
-            var rez_cmp_local_bitmap_FlowerStage4 = new WatchUi.Bitmap({:identifier=>"FlowerStage4", :rezId=>$.Rez.Drawables.FlowerStage4, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>15});
+            var rez_cmp_local_bitmap_FlowerStage4 = new WatchUi.Bitmap({:identifier=>"FlowerStage4", :rezId=>$.Rez.Drawables.FlowerStage4, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>50});
             rez_cmp_local_bitmap_FlowerStage4.setLocation(((208 - rez_cmp_local_bitmap_FlowerStage4.width) * 0.5), rez_cmp_local_bitmap_FlowerStage4.locY);
 
             var rez_cmp_local_text_StepLabel = new WatchUi.Text({:identifier=>"StepLabel", :locX=>(208 * 0.5), :locY=>145, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_SMALL});
@@ -62,7 +62,7 @@ module Rez {
         }
 
         function FlowerStage6Layout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
-            var rez_cmp_local_bitmap_FlowerStage5 = new WatchUi.Bitmap({:identifier=>"FlowerStage5", :rezId=>$.Rez.Drawables.FlowerStage5, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>15});
+            var rez_cmp_local_bitmap_FlowerStage5 = new WatchUi.Bitmap({:identifier=>"FlowerStage5", :rezId=>$.Rez.Drawables.FlowerStage5, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>50});
             rez_cmp_local_bitmap_FlowerStage5.setLocation(((208 - rez_cmp_local_bitmap_FlowerStage5.width) * 0.5), rez_cmp_local_bitmap_FlowerStage5.locY);
 
             var rez_cmp_local_text_StepLabel = new WatchUi.Text({:identifier=>"StepLabel", :locX=>(208 * 0.5), :locY=>145, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_SMALL});

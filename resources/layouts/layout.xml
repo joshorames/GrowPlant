@@ -1,45 +1,28 @@
 <resources>
     <layouts>
         <layout id="FlowerStage1Layout">
-            <bitmap id="FlowerStage" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
-            
+            <bitmap id="FlowerStage" x="center" y="50" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
             <label id="StepLabel" x="center" y="145" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-      
         </layout>
-
         <layout id="FlowerStage2Layout">
-            <bitmap id="FlowerStage1" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower1.png"/>
-         
+            <bitmap id="FlowerStage1" x="center" y="50" filename="C:\Users\josho\Desktop\GrowPlant\images\flower1.png"/>
             <label id="StepLabel" x="center" y="145" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-    
         </layout>
-
         <layout id="FlowerStage3Layout">
-            <bitmap id="FlowerStage2" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower2.png"/>
-        
+            <bitmap id="FlowerStage2" x="center" y="50" filename="C:\Users\josho\Desktop\GrowPlant\images\flower2.png"/>
             <label id="StepLabel" x="center" y="145" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-   
         </layout>
-
         <layout id="FlowerStage4Layout">
-            <bitmap id="FlowerStage3" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower3.png"/>
-     
+            <bitmap id="FlowerStage3" x="center" y="50" filename="C:\Users\josho\Desktop\GrowPlant\images\flower3.png"/>
             <label id="StepLabel" x="center" y="145" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-    
         </layout>
-
         <layout id="FlowerStage5Layout">
-            <bitmap id="FlowerStage4" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower4.png"/>
-
+            <bitmap id="FlowerStage4" x="center" y="50" filename="C:\Users\josho\Desktop\GrowPlant\images\flower4.png"/>
             <label id="StepLabel" x="center" y="145" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-        
         </layout>
-
         <layout id="FlowerStage6Layout">
-            <bitmap id="FlowerStage5" x="center" y="15" filename="C:\Users\josho\Desktop\GrowPlant\images\flower5.png"/>
-      
+            <bitmap id="FlowerStage5" x="center" y="50" filename="C:\Users\josho\Desktop\GrowPlant\images\flower5.png"/>
             <label id="StepLabel" x="center" y="145" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
-          
         </layout>
     </layouts>
 </resources>

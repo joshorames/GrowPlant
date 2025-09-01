@@ -4,6 +4,7 @@ import Toybox.System;
 import Toybox.WatchUi;
 using Toybox.Time as Time;
 using Toybox.Time.Gregorian as Gregorian;
+using Toybox.Position;
 
 class GrowPlantView extends WatchUi.WatchFace {
     var flowerStage1 as Graphics.Bitmap;
@@ -16,6 +17,32 @@ class GrowPlantView extends WatchUi.WatchFace {
     function initialize() {
         WatchFace.initialize();
 
+    }
+
+    function drawCelestial(dc as Graphics.Dc, centerX as Number, centerY as Number, radius as Number, angle as Number, isSun as Boolean) as Void {
+    var x = (centerX + radius * Math.cos(angle)).toNumber();
+    var y = (centerY - radius * Math.sin(angle)).toNumber(); // minus so semicircle is upward
+    dc.setColor(isSun ? Graphics.COLOR_YELLOW : Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+    dc.fillCircle(x, y, 5);
+    }
+
+    function sunAngle(currentSec as Number, sunriseSec as Number, sunsetSec as Number) as Number {
+        if (currentSec < sunriseSec) {
+            return (-Math.PI/2).toNumber();
+        }      // before sunrise, left horizon
+        if (currentSec > sunsetSec) {
+            return (Math.PI/2).toNumber(); 
+        }       // after sunset, right horizon
+        var ratio = (currentSec - sunriseSec) / (sunsetSec - sunriseSec); // 0..1
+        return (-Math.PI/2 + ratio * Math.PI).toNumber();    // maps to -90°..+90°
+    }
+
+    function moonAngle(currentSec as Number, sunriseSec as Number, sunsetSec as Number) as Number {
+        var nightStart = sunsetSec;
+        var nightEnd   = sunriseSec + 86400; // wrap past midnight
+        var sec = (currentSec >= sunsetSec) ? currentSec : currentSec + 86400;
+        var ratio = (sec - nightStart) / (nightEnd - nightStart); // 0..1
+        return (-Math.PI/2 + ratio * Math.PI).toNumber();         // maps to -90°..+90° for night
     }
 
     // Load your resources here
@@ -31,6 +58,7 @@ class GrowPlantView extends WatchUi.WatchFace {
 
     // Update the view
     function onUpdate(dc as Dc) as Void {
+    
     var steps = ActivityMonitor.getInfo().steps;
     var goal  = ActivityMonitor.getInfo().stepGoal;
     var percent = (goal > 0) ? steps * 1.0 / goal : 0.0;
@@ -61,31 +89,30 @@ class GrowPlantView extends WatchUi.WatchFace {
         // Round to nearest whole number
         var percentRounded = Math.round(stepPercent);
     stepView.setText(percentRounded.toString()+"% to goal");
+View.onUpdate(dc);
+    // Battery bar at bottom
+    var batteryPct = System.getSystemStats().battery; // 0-100
+    var barWidth = dc.getWidth() - 100; // leave 10px padding
+    var barHeight = 6;
+    var bx = 50;               
+    var by = dc.getHeight() - barHeight -25; // 5px padding from bottom
+    var fillWidth = Math.floor(barWidth * (batteryPct / 100.0));
 
-    View.onUpdate(dc);
-// Battery bar at bottom
-var batteryPct = System.getSystemStats().battery; // 0-100
-var barWidth = dc.getWidth() - 100; // leave 10px padding
-var barHeight = 6;
-var bx = 50;               
-var by = dc.getHeight() - barHeight -25; // 5px padding from bottom
-var fillWidth = Math.floor(barWidth * (batteryPct / 100.0));
+    dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_BLACK);
 
-dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_BLACK);
+    // Draw outline (top, bottom, left, right)
+    dc.drawLine(bx, by, bx + barWidth, by);                   // top
+    dc.drawLine(bx, by + barHeight, bx + barWidth, by + barHeight); // bottom
+    dc.drawLine(bx, by, bx, by + barHeight);                 // left
+    dc.drawLine(bx + barWidth, by, bx + barWidth, by + barHeight); // right
 
-// Draw outline (top, bottom, left, right)
-dc.drawLine(bx, by, bx + barWidth, by);                   // top
-dc.drawLine(bx, by + barHeight, bx + barWidth, by + barHeight); // bottom
-dc.drawLine(bx, by, bx, by + barHeight);                 // left
-dc.drawLine(bx + barWidth, by, bx + barWidth, by + barHeight); // right
-
-// Fill battery bar with horizontal lines
-if (fillWidth > 2) { // avoid negative width
-    for (var fy = by + 1; fy < by + barHeight; fy += 1) {
-        dc.drawLine(bx + 1, fy, bx + fillWidth - 1, fy);
+    // Fill battery bar with horizontal lines
+    if (fillWidth > 2) { // avoid negative width
+        for (var fy = by + 1; fy < by + barHeight; fy += 1) {
+            dc.drawLine(bx + 1, fy, bx + fillWidth - 1, fy);
+        }
     }
-}
-  dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
     // --- Draw big readable time ---
     var clockTime = System.getClockTime();
     var clockTimeText = clockTime.hour%12;
@@ -122,25 +149,43 @@ if (fillWidth > 2) { // avoid negative width
     var dateInfo = Gregorian.info(now, Time.FORMAT_SHORT);
 
     var weekdays = ["?", "Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-var months   = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var months   = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
-var weekdayName = (dateInfo.day_of_week >= 1 && dateInfo.day_of_week <= 7) 
-    ? weekdays[dateInfo.day_of_week] 
-    : "?";
+    var weekdayName = (dateInfo.day_of_week >= 1 && dateInfo.day_of_week <= 7) 
+        ? weekdays[dateInfo.day_of_week] 
+        : "?";
 
-var monthName = (dateInfo.month >= 1 && dateInfo.month <= 12) 
-    ? months[dateInfo.month-1] 
-    : "?";
+    var monthName = (dateInfo.month >= 1 && dateInfo.month <= 12) 
+        ? months[dateInfo.month-1] 
+        : "?";
 
-var dateString = Lang.format("$1$, $2$ $3$", [
-    weekdayName,
-    monthName,
-    dateInfo.day
-]);
+    var dateString = Lang.format("$1$, $2$ $3$", [
+        weekdayName,
+        monthName,
+        dateInfo.day
+    ]);
 
 
     dc.drawText(cx, cy + 30, Graphics.FONT_XTINY, dateString, Graphics.TEXT_JUSTIFY_CENTER);
-    
+        // --- Sun & Moon ---
+
+        var currentSec = clockTime.hour*3600 + clockTime.min*60 + clockTime.sec;
+        var sunriseSec = 6*3600;   // Placeholder 6:00 AM
+        var sunsetSec  = 18*3600;  // Placeholder 6:00 PM
+
+        var centerX = dc.getWidth()/2;
+        var centerY = 20;
+        var radius  = 40;
+
+        // Day: sun
+        if (currentSec >= sunriseSec && currentSec <= sunsetSec) {
+            drawCelestial(dc, centerX, centerY, radius, sunAngle(currentSec, sunriseSec, sunsetSec), true);
+        }
+
+        // Night: moon
+        if (currentSec < sunriseSec || currentSec > sunsetSec) {
+            drawCelestial(dc, centerX, centerY, radius, moonAngle(currentSec, sunriseSec, sunsetSec), false);
+        }
 }
 
 

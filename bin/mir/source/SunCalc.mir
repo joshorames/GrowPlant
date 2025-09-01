@@ -1,0 +1,100 @@
+[ @file = "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Math,1,13,17]; ]
+using Toybox.Math;
+[ @file = "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc"; @line = 3; @symbol_classdef = [SunCalc,3,6,13]; ]
+class SunCalc {
+    [ @file = "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc"; @line = 6; @symbol_functiondef = [calculate,6,20,29]; @symbol_param<0> = [lat,6,30,33]; @symbol_param<1> = [lon,6,35,38]; @symbol_param<2> = [clockTime,6,40,49]; ]
+    static
+    function calculate(lat, lon, clockTime) {
+C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_6_51_10_4_start:
+[ "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc" 7 8 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_6_51_10_4_start" "C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_6_51_10_4_stop" ]
+        %sunrise.1 = local;
+        symbol [ sunrise %sunrise.1 7 12 19 ];
+        %tmp.1 = 21600;
+        lputv %sunrise.1 %tmp.1;
+        symbol [ sunrise %sunrise.1 7 12 19 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc" 8 8 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_6_51_10_4_start" "C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_6_51_10_4_stop" ]
+        %sunset.2 = local;
+        symbol [ sunset %sunset.2 8 12 18 ];
+        %tmp.2 = 64800;
+        lputv %sunset.2 %tmp.2;
+        symbol [ sunset %sunset.2 8 12 18 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc" 9 8 ]
+        %tmp.3 = newa 2;
+        %tmp.4 = lgetv %sunrise.1;
+        symbol [ sunrise %tmp.4 9 16 23 ];
+        %tmp.5 = dup %tmp.3;
+        %tmp.6 = aputv %tmp.5 0 %tmp.4;
+        %tmp.7 = lgetv %sunset.2;
+        symbol [ sunset %tmp.7 9 25 31 ];
+        %tmp.8 = dup %tmp.6;
+        %tmp.9 = aputv %tmp.8 1 %tmp.7;
+        ret %tmp.9;
+C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_6_51_10_4_stop:
+    }
+    [ @file = "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc"; @line = 12; @symbol_functiondef = [formatTime,12,20,30]; @symbol_param<0> = [sec,12,31,34]; ]
+    static
+    function formatTime(sec) {
+C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_12_36_16_4_start:
+[ "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc" 13 8 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_12_36_16_4_start" "C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_12_36_16_4_stop" ]
+        %h.1 = local;
+        symbol [ h %h.1 13 12 13 ];
+        %tmp.1 = lgetv %sec;
+        symbol [ sec %tmp.1 13 17 20 ];
+        %tmp.2 = 3600;
+        %tmp.3 = div %tmp.1 %tmp.2;
+        lputv %h.1 %tmp.3;
+        symbol [ h %h.1 13 12 13 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc" 14 8 ]
+        [ "C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_12_36_16_4_start" "C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_12_36_16_4_stop" ]
+        %m.2 = local;
+        symbol [ m %m.2 14 12 13 ];
+        %tmp.4 = lgetv %sec;
+        symbol [ sec %tmp.4 14 18 21 ];
+        %tmp.5 = 3600;
+        %tmp.6 = mod %tmp.4 %tmp.5;
+        %tmp.7 = 60;
+        %tmp.8 = div %tmp.6 %tmp.7;
+        lputv %m.2 %tmp.8;
+        symbol [ m %m.2 14 12 13 ];
+[ "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc" 15 8 ]
+        %tmp.9 = lgetv %h.1;
+        symbol [ h %tmp.9 15 15 16 ];
+        %tmp.10 = ":";
+        %tmp.11 = add %tmp.9 %tmp.10;
+C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_15_26_15_45_begin:
+        %tmp.12 = lgetv %m.2;
+        symbol [ m %tmp.12 15 26 27 ];
+        %tmp.13 = 10;
+        %tmp.14 = lt %tmp.12 %tmp.13;
+        bf %tmp.14 @C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_15_26_15_45_false;
+C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_15_26_15_45_true:
+        %tmp.15 = "0";
+        %tmp.16 = lgetv %m.2;
+        symbol [ m %tmp.16 15 41 42 ];
+        %tmp.17 = add %tmp.15 %tmp.16;
+        push %tmp.17;
+        goto @C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_15_26_15_45_end;
+C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_15_26_15_45_false:
+        %tmp.18 = lgetv %m.2;
+        symbol [ m %tmp.18 15 45 46 ];
+        push %tmp.18;
+C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_15_26_15_45_end:
+        %tmp.19 = phi [%tmp.14 @C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_15_26_15_45_begin] [%tmp.17 @C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_15_26_15_45_true] [%tmp.18 @C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_15_26_15_45_false] [%tmp.19 @C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_15_26_15_45_end];
+        %tmp.20 = add %tmp.11 %tmp.19;
+        ret %tmp.20;
+C__Users_josho_Desktop_GrowPlant_source_SunCalc_mc_12_36_16_4_stop:
+    }
+}
+[ @file = "C:\Users\josho\Desktop\GrowPlant\source\SunCalc.mc"; @line = 1; ]
+<init> {
+}
