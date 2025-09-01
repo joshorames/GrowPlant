@@ -45,25 +45,11 @@ class GrowPlantView extends WatchUi.WatchFace {
         return (-Math.PI/2 + ratio * Math.PI).toNumber();         // maps to -90°..+90° for night
     }
 
-    // Load your resources here
-    function onLayout(dc as Dc) as Void {
-        setLayout(Rez.Layouts.FlowerStage1Layout(dc));
-    }
-
-    // Called when this View is brought to the foreground. Restore
-    // the state of this View and prepare it to be shown. This includes
-    // loading resources into memory.
-    function onShow() as Void {
-    }
-
-    // Update the view
-    function onUpdate(dc as Dc) as Void {
-    
-    var steps = ActivityMonitor.getInfo().steps;
+    function drawFlower(dc as Dc) as Void {
+          var steps = ActivityMonitor.getInfo().steps;
     var goal  = ActivityMonitor.getInfo().stepGoal;
-    var percent = (goal > 0) ? steps * 1.0 / goal : 0.0;
-
-    // Switch layout based on step progress
+         var percent = (goal > 0) ? steps * 1.0 / goal : 0.0;
+        // Switch layout based on step progress
     if (percent < 0.17) {
         setLayout(Rez.Layouts.FlowerStage1Layout(dc));
     } else if (percent < 0.34) {
@@ -77,7 +63,7 @@ class GrowPlantView extends WatchUi.WatchFace {
     } else {
         setLayout(Rez.Layouts.FlowerStage6Layout(dc));
     }
-
+    
     // Update step label
     //var stepString = Lang.format("$1$ / $2$ steps", [steps, goal]);
     var stepView = View.findDrawableById("StepLabel") as Text;
@@ -90,7 +76,9 @@ class GrowPlantView extends WatchUi.WatchFace {
         var percentRounded = Math.round(stepPercent);
     stepView.setText(percentRounded.toString()+"% to goal");
 View.onUpdate(dc);
-    // Battery bar at bottom
+    }
+    function drawBattery(dc as Dc) as Void {
+       // Battery bar at bottom
     var batteryPct = System.getSystemStats().battery; // 0-100
     var barWidth = dc.getWidth() - 100; // leave 10px padding
     var barHeight = 6;
@@ -112,7 +100,11 @@ View.onUpdate(dc);
             dc.drawLine(bx + 1, fy, bx + fillWidth - 1, fy);
         }
     }
-    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+    }
+
+    // Load your resources here
+    function drawTime(dc as Dc) as Void {
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
     // --- Draw big readable time ---
     var clockTime = System.getClockTime();
     var clockTimeText = clockTime.hour%12;
@@ -137,12 +129,9 @@ View.onUpdate(dc);
             dc.drawText(cx + dx, cy + dy, font, timeString, Graphics.TEXT_JUSTIFY_CENTER);
         }
     }
-}
 
-
-    // Draw main crisp text on top
+     // Draw main crisp text on top
     dc.drawText(cx, cy, font, timeString, Graphics.TEXT_JUSTIFY_CENTER);
-
     // Defensive check: day_of_week can be 0–6, month 1–12
     // ===== DATE =====
     var now = Time.now(); // "Moment" object
@@ -167,6 +156,31 @@ View.onUpdate(dc);
 
 
     dc.drawText(cx, cy + 30, Graphics.FONT_XTINY, dateString, Graphics.TEXT_JUSTIFY_CENTER);
+    }}
+
+    // Load your resources here
+    function onLayout(dc as Dc) as Void {
+        setLayout(Rez.Layouts.FlowerStage1Layout(dc));
+    }
+
+    // Called when this View is brought to the foreground. Restore
+    // the state of this View and prepare it to be shown. This includes
+    // loading resources into memory.
+    function onShow() as Void {
+    }
+
+    // Update the view
+    function onUpdate(dc as Dc) as Void {
+    drawFlower(dc);
+    drawBattery(dc);
+    drawTime(dc);
+    
+
+var clockTime = System.getClockTime();
+
+   
+
+    
         // --- Sun & Moon ---
 
         var currentSec = clockTime.hour*3600 + clockTime.min*60 + clockTime.sec;
