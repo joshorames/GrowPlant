@@ -9,6 +9,7 @@ using Toybox.WatchUi as WatchUi;
 using Toybox.Graphics as Graphics;
 using Toybox.System as System;
 using Toybox.Time as Time;
+using Toybox.Weather as Weather;
 
 class GrowPlantView extends WatchUi.WatchFace {
     var flowerStage1 as Graphics.Bitmap;
@@ -17,6 +18,74 @@ class GrowPlantView extends WatchUi.WatchFace {
     var flowerStage4 as Graphics.Bitmap;
     var flowerStage5 as Graphics.Bitmap;
     var flowerStage6 as Graphics.Bitmap;
+
+    // class members (add near top of your class)
+var _sunriseSec as Number = 6 * 3600;
+var _sunsetSec  as Number = 18 * 3600;
+var _sunDateKey as Number = -1;
+
+// call this once in onLayout() and again in onUpdate() if the date changes
+function updateSunTimes() as Void {
+    var nowMoment = Time.now();
+    var nowInfo = Gregorian.info(nowMoment, Time.FORMAT_SHORT);
+
+    // small integer key for today to avoid recomputing every minute
+    var todayKey = nowInfo.year * 10000 + nowInfo.month * 100 + nowInfo.day;
+    if (todayKey == _sunDateKey) {
+        return; // already computed for today
+    }
+
+    var loc = null;
+
+    // 1) Prefer weather's observation location (most likely available if weather is enabled)
+    var wc = Weather.getCurrentConditions();
+    if (wc != null && wc.observationLocationPosition != null) {
+        loc = wc.observationLocationPosition;
+    }
+
+    // 2) Fallback: get activity last-known location
+    if (loc == null) {
+        var act = Activity.getActivityInfo();
+        if (act != null && act.currentLocation != null) {
+            loc = act.currentLocation;
+        }
+    }
+
+    // 3) Fallback: Position.getInfo() last-known (may be null)
+    if (loc == null) {
+        var pinfo = Position.getInfo();
+        if (pinfo != null && pinfo.position != null) {
+            loc = pinfo.position;
+        }
+    }
+
+    // If we have a location, call Weather.getSunrise/getSunset with (location, date)
+    if (loc != null) {
+        var sunRiseMoment = Weather.getSunrise(loc, nowMoment);
+        var sunSetMoment  = Weather.getSunset(loc, nowMoment);
+
+        if (sunRiseMoment != null) {
+            var rinfo = Gregorian.info(sunRiseMoment, Time.FORMAT_SHORT);
+            _sunriseSec = rinfo.hour * 3600 + rinfo.min * 60 + rinfo.sec;
+        } else {
+            _sunriseSec = 6 * 3600; // fallback default
+        }
+
+        if (sunSetMoment != null) {
+            var sinfo = Gregorian.info(sunSetMoment, Time.FORMAT_SHORT);
+            _sunsetSec = sinfo.hour * 3600 + sinfo.min * 60 + sinfo.sec;
+        } else {
+            _sunsetSec = 18 * 3600; // fallback default
+        }
+
+    } else {
+        // No location available — keep sensible defaults
+        _sunriseSec = 6 * 3600;
+        _sunsetSec  = 18 * 3600;
+    }
+
+    _sunDateKey = todayKey; // mark as computed for today
+}
 
     function initialize() {
         WatchFace.initialize();
@@ -79,23 +148,18 @@ class GrowPlantView extends WatchUi.WatchFace {
     drawBitmapTime(dc, timeString);
 
     // sun/moon
+    updateSunTimes(); // update sunrise/sunset if needed
     var currentSec = hour*3600 + minute*60 + clockTime.sec;
-    var sunriseSec = 6*3600;
-    var sunsetSec = 18*3600;
     var centerX = dc.getWidth()/2;
     var centerY = 20;
     var radius  = 40;
 
-    if (currentSec >= sunriseSec && currentSec <= sunsetSec) {
-        drawCelestial(dc, centerX, centerY, radius, sunAngle(currentSec, sunriseSec, sunsetSec), true);
+    if (currentSec >= _sunriseSec && currentSec <= _sunsetSec) {
+        drawCelestial(dc, centerX, centerY, radius, sunAngle(currentSec, _sunriseSec, _sunsetSec), true);
     } else {
-        drawCelestial(dc, centerX, centerY, radius, moonAngle(currentSec, sunriseSec, sunsetSec), false);
+        drawCelestial(dc, centerX, centerY, radius, moonAngle(currentSec, _sunriseSec, _sunsetSec), false);
     }
-
-    
-
 }
-
 
 // Just store resource IDs — do NOT try to make BufferedBitmap
     var digit_0 as Toybox.Lang.ResourceId?;
