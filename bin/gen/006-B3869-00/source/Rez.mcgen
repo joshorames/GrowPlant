@@ -7,6 +7,17 @@ using Toybox.Graphics as Gfx;
 module Rez {
     module Drawables {
         (:initialized) var LauncherIcon as ResourceId;
+        (:initialized) var digit_0 as ResourceId;
+        (:initialized) var digit_1 as ResourceId;
+        (:initialized) var digit_2 as ResourceId;
+        (:initialized) var digit_3 as ResourceId;
+        (:initialized) var digit_4 as ResourceId;
+        (:initialized) var digit_5 as ResourceId;
+        (:initialized) var digit_6 as ResourceId;
+        (:initialized) var digit_7 as ResourceId;
+        (:initialized) var digit_8 as ResourceId;
+        (:initialized) var digit_9 as ResourceId;
+        (:initialized) var digit_colon as ResourceId;
         (:initialized) var FlowerStage1 as ResourceId;
         (:initialized) var FlowerStage2 as ResourceId;
         (:initialized) var FlowerStage3 as ResourceId;

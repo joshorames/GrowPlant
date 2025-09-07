@@ -5,6 +5,10 @@ import Toybox.WatchUi;
 using Toybox.Time as Time;
 using Toybox.Time.Gregorian as Gregorian;
 using Toybox.Position;
+using Toybox.WatchUi as WatchUi;
+using Toybox.Graphics as Graphics;
+using Toybox.System as System;
+using Toybox.Time as Time;
 
 class GrowPlantView extends WatchUi.WatchFace {
     var flowerStage1 as Graphics.Bitmap;
@@ -16,8 +20,134 @@ class GrowPlantView extends WatchUi.WatchFace {
 
     function initialize() {
         WatchFace.initialize();
-
     }
+
+    // Load your resources here
+    function onLayout(dc as Dc) as Void {
+        setLayout(Rez.Layouts.FlowerStage1Layout(dc));
+        // Load resources once
+        digit_0 = Rez.Drawables.digit_0;
+        digit_1 = Rez.Drawables.digit_1;
+        digit_2 = Rez.Drawables.digit_2;
+        digit_3 = Rez.Drawables.digit_3;
+        digit_4 = Rez.Drawables.digit_4;
+        digit_5 = Rez.Drawables.digit_5;
+        digit_6 = Rez.Drawables.digit_6;
+        digit_7 = Rez.Drawables.digit_7;
+        digit_8 = Rez.Drawables.digit_8;
+        digit_9 = Rez.Drawables.digit_9;
+        digit_colon = Rez.Drawables.digit_colon;
+
+        // Build lookup table
+        digits = {
+            "0" => digit_0,
+            "1" => digit_1,
+            "2" => digit_2,
+            "3" => digit_3,
+            "4" => digit_4,
+            "5" => digit_5,
+            "6" => digit_6,
+            "7" => digit_7,
+            "8" => digit_8,
+            "9" => digit_9,
+            ":" => digit_colon
+        };
+    }
+
+   function onUpdate(dc as Dc) as Void {
+    dc.clear();
+    // draw flower first
+    drawFlower(dc);
+
+    // draw battery
+    drawBattery(dc);
+
+    drawTime(dc);
+
+    // get time
+    var clockTime = System.getClockTime();
+    var hour = clockTime.hour;
+    var minute = clockTime.min;
+      var clockTimeText = clockTime.hour%12;
+    if (clockTimeText == 0) {
+        clockTimeText = 12; // 12-hour format
+    }
+    var timeString = Lang.format("$1$:$2$", 
+        [clockTimeText, clockTime.min.format("%02d")]);
+
+    // draw bitmap time
+    drawBitmapTime(dc, timeString);
+
+    // sun/moon
+    var currentSec = hour*3600 + minute*60 + clockTime.sec;
+    var sunriseSec = 6*3600;
+    var sunsetSec = 18*3600;
+    var centerX = dc.getWidth()/2;
+    var centerY = 20;
+    var radius  = 40;
+
+    if (currentSec >= sunriseSec && currentSec <= sunsetSec) {
+        drawCelestial(dc, centerX, centerY, radius, sunAngle(currentSec, sunriseSec, sunsetSec), true);
+    } else {
+        drawCelestial(dc, centerX, centerY, radius, moonAngle(currentSec, sunriseSec, sunsetSec), false);
+    }
+
+    
+
+}
+
+
+// Just store resource IDs — do NOT try to make BufferedBitmap
+    var digit_0 as Toybox.Lang.ResourceId?;
+    var digit_1 as Toybox.Lang.ResourceId?;
+    var digit_2 as Toybox.Lang.ResourceId?;
+    var digit_3 as Toybox.Lang.ResourceId?;
+    var digit_4 as Toybox.Lang.ResourceId?;
+    var digit_5 as Toybox.Lang.ResourceId?;
+    var digit_6 as Toybox.Lang.ResourceId?;
+    var digit_7 as Toybox.Lang.ResourceId?;
+    var digit_8 as Toybox.Lang.ResourceId?;
+    var digit_9 as Toybox.Lang.ResourceId?;
+    var digit_colon as Toybox.Lang.ResourceId?;
+
+    // Lookup table
+    var digits;
+
+
+    function drawBitmapTime(dc as Graphics.Dc, timeStr as String) {
+    var screenW = dc.getWidth();
+    var screenH = dc.getHeight();
+
+    var totalWidth = 0;
+    var digitHeight = 0;
+
+    // calculate total width
+    for (var i = 0; i < timeStr.length(); i++) {
+        var ch = timeStr.substring(i,i+1);
+        if (digits.hasKey(ch) && digits[ch] != null) {
+            var bmp = WatchUi.loadResource(digits[ch]);
+            totalWidth += bmp.getWidth();
+            digitHeight = bmp.getHeight();
+        }
+    }
+
+    var startX = (screenW - totalWidth) / 2;
+    var y = 90; // fixed Y coordinate
+    var curX = startX;
+
+    // draw digits
+    for (var i = 0; i < timeStr.length(); i++) {
+        var ch = timeStr.substring(i,i+1);
+        if (digits.hasKey(ch) && digits[ch] != null) {
+            var bmp = WatchUi.loadResource(digits[ch]);
+            dc.drawBitmap(curX, y, bmp);
+            curX += bmp.getWidth();
+        }
+    }
+}
+
+
+
 
     function drawCelestial(dc as Graphics.Dc, centerX as Number, centerY as Number, radius as Number, angle as Number, isSun as Boolean) as Void {
     var x = (centerX + radius * Math.cos(angle)).toNumber();
@@ -104,34 +234,7 @@ View.onUpdate(dc);
 
     // Load your resources here
     function drawTime(dc as Dc) as Void {
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
-    // --- Draw big readable time ---
-    var clockTime = System.getClockTime();
-    var clockTimeText = clockTime.hour%12;
-    if (clockTimeText == 0) {
-        clockTimeText = 12; // 12-hour format
-    }
-    var timeString = Lang.format("$1$:$2$ $3$", 
-        [clockTimeText, clockTime.min.format("%02d"), clockTime.hour<12 ? "AM" : "PM"]);
-
-    var cx = dc.getWidth() / 2;
-    var cy = 90; // vertical center
-    var font = Graphics.FONT_LARGE;
-
-    // Auto-scale width based on digits (fake scaling)
-    // Draw each digit slightly offset horizontally and vertically
-    var offsets = [-1, -1, 0, 1, 1]; // wider spacing for boldness
-    for (var i = 0; i < offsets.size(); i += 1) {
-    var dx = offsets[i];
-    for (var j = 0; j < offsets.size(); j += 1) {
-        var dy = offsets[j];
-        if (!(dx == 0 && dy == 0)) {
-            dc.drawText(cx + dx, cy + dy, font, timeString, Graphics.TEXT_JUSTIFY_CENTER);
-        }
-    }
-
-     // Draw main crisp text on top
-    dc.drawText(cx, cy, font, timeString, Graphics.TEXT_JUSTIFY_CENTER);
+       
     // Defensive check: day_of_week can be 0–6, month 1–12
     // ===== DATE =====
     var now = Time.now(); // "Moment" object
@@ -155,55 +258,15 @@ View.onUpdate(dc);
     ]);
 
 
-    dc.drawText(cx, cy + 30, Graphics.FONT_XTINY, dateString, Graphics.TEXT_JUSTIFY_CENTER);
-    }}
-
-    // Load your resources here
-    function onLayout(dc as Dc) as Void {
-        setLayout(Rez.Layouts.FlowerStage1Layout(dc));
+    dc.drawText(105, 125, Graphics.FONT_XTINY, dateString, Graphics.TEXT_JUSTIFY_CENTER);
     }
 
-    // Called when this View is brought to the foreground. Restore
-    // the state of this View and prepare it to be shown. This includes
-    // loading resources into memory.
-    function onShow() as Void {
-    }
-
-    // Update the view
-    function onUpdate(dc as Dc) as Void {
-    drawFlower(dc);
-    drawBattery(dc);
-    drawTime(dc);
     
 
-var clockTime = System.getClockTime();
-
-   
-
-    
-        // --- Sun & Moon ---
-
-        var currentSec = clockTime.hour*3600 + clockTime.min*60 + clockTime.sec;
-        var sunriseSec = 6*3600;   // Placeholder 6:00 AM
-        var sunsetSec  = 18*3600;  // Placeholder 6:00 PM
-
-        var centerX = dc.getWidth()/2;
-        var centerY = 20;
-        var radius  = 40;
-
-        // Day: sun
-        if (currentSec >= sunriseSec && currentSec <= sunsetSec) {
-            drawCelestial(dc, centerX, centerY, radius, sunAngle(currentSec, sunriseSec, sunsetSec), true);
-        }
-
-        // Night: moon
-        if (currentSec < sunriseSec || currentSec > sunsetSec) {
-            drawCelestial(dc, centerX, centerY, radius, moonAngle(currentSec, sunriseSec, sunsetSec), false);
-        }
+  function getClockTimeResolution() {
+    // update once per minute
+    return 60;
 }
-
-
-
     // Called when this View is removed from the screen. Save the
     // state of this View here. This includes freeing resources from
     // memory.

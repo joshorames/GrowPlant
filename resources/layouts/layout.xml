@@ -1,4 +1,17 @@
 <resources>
+
+    <bitmap id="digit_0" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\0.png" />
+    <bitmap id="digit_1" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\1.png" />
+    <bitmap id="digit_2" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\2.png" />
+    <bitmap id="digit_3" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\3.png" />
+    <bitmap id="digit_4" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\4.png" />
+    <bitmap id="digit_5" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\5.png" />
+    <bitmap id="digit_6" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\6.png" />
+    <bitmap id="digit_7" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\7.png" />
+    <bitmap id="digit_8" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\8.png" />
+    <bitmap id="digit_9" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\9.png" />
+    <bitmap id="digit_colon" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\colon.png" />
+
     <layouts>
         <layout id="FlowerStage1Layout">
             <bitmap id="FlowerStage" x="center" y="50" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
