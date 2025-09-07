@@ -23,6 +23,7 @@ class GrowPlantView extends WatchUi.WatchFace {
 var _sunriseSec as Number = 6 * 3600;
 var _sunsetSec  as Number = 18 * 3600;
 var _sunDateKey as Number = -1;
+var _heartRate as Number = 0;
 
 // call this once in onLayout() and again in onUpdate() if the date changes
 function updateSunTimes() as Void {
@@ -121,10 +122,32 @@ function updateSunTimes() as Void {
             "9" => digit_9,
             ":" => digit_colon
         };
+
+        res_weather_clear = Rez.Drawables.weather_clear;
+        res_weather_mostly_clear = Rez.Drawables.weather_mostly_clear;
+        res_weather_partly = Rez.Drawables.weather_partly;
+        res_weather_cloudy = Rez.Drawables.weather_cloudy;
+        res_weather_rain = Rez.Drawables.weather_rain;
+        res_weather_snow = Rez.Drawables.weather_snow;
+        res_weather_storm = Rez.Drawables.weather_storm;
+
+        weatherIcons = {
+            "CLEAR"        => res_weather_clear,
+            "MOSTLY_CLEAR" => res_weather_mostly_clear,
+            "PARTLY_CLEAR" => res_weather_partly,
+            "CLOUDY"       => res_weather_cloudy,
+            "RAIN"         => res_weather_rain,
+            "LIGHT_RAIN"   => res_weather_rain,
+            "HEAVY_RAIN"   => res_weather_rain,
+            "SNOW"         => res_weather_snow,
+            "LIGHT_SNOW"   => res_weather_snow,
+            "STORM"        => res_weather_storm
+        };
     }
 
    function onUpdate(dc as Dc) as Void {
     dc.clear();
+    
     // draw flower first
     drawFlower(dc);
 
@@ -147,6 +170,8 @@ function updateSunTimes() as Void {
     // draw bitmap time
     drawBitmapTime(dc, timeString);
 
+  
+
     // sun/moon
     updateSunTimes(); // update sunrise/sunset if needed
     var currentSec = hour*3600 + minute*60 + clockTime.sec;
@@ -159,6 +184,8 @@ function updateSunTimes() as Void {
     } else {
         drawCelestial(dc, centerX, centerY, radius, moonAngle(currentSec, _sunriseSec, _sunsetSec), false);
     }
+
+      drawWeather(dc, 110, 33); // center weather icon below time
 }
 
 // Just store resource IDs — do NOT try to make BufferedBitmap
@@ -174,9 +201,17 @@ function updateSunTimes() as Void {
     var digit_9 as Toybox.Lang.ResourceId?;
     var digit_colon as Toybox.Lang.ResourceId?;
 
+    var res_weather_clear as Toybox.Lang.ResourceId?;
+    var res_weather_mostly_clear as Toybox.Lang.ResourceId?;
+    var res_weather_partly as Toybox.Lang.ResourceId?;
+    var res_weather_cloudy as Toybox.Lang.ResourceId?;
+    var res_weather_rain as Toybox.Lang.ResourceId?;
+    var res_weather_snow as Toybox.Lang.ResourceId?;
+    var res_weather_storm as Toybox.Lang.ResourceId?;
+
     // Lookup table
     var digits;
-
+    var weatherIcons;
 
     function drawBitmapTime(dc as Graphics.Dc, timeStr as String) {
     var screenW = dc.getWidth();
@@ -209,9 +244,65 @@ function updateSunTimes() as Void {
         }
     }
 }
+// call this from onUpdate (or onLayout first). Safe, cheap: it just reads cached conditions.
+function drawWeather(dc as Graphics.Dc, x as Number, y as Number) as Void {
+    var wc = Weather.getCurrentConditions();
+    if (wc == null) {
+        return;
+    }
 
+    // Many fields can be null; check them
+    var cond = null;
+    try {
+        cond = wc.condition; // many SDKs expose a numeric enum as 'condition'
+    } catch (e) {
+        cond = null;
+    }
 
+    var iconRes = weatherIconForCondition(cond);
+    if (iconRes != null) {
+        var bmp = WatchUi.loadResource(iconRes);
+        if (bmp != null) {
+            dc.drawBitmap(x, y, bmp);
+        }
+    }
 
+}
+// helper: choose a resourceId based on the Weather condition constant
+function weatherIconForCondition(cond) as Toybox.Lang.ResourceId? {
+    // cond may be a numeric enum like Weather.CONDITION_CLOUDY or a symbol depending on SDK;
+    // we'll test for common numeric constants then map to string keys.
+    if (cond == null) {
+        return null;
+    }
+
+    // The Weather module exposes constants like Weather.CONDITION_CLOUDY (see API).
+    // Map several weather.CONDITION_* values to our icons:
+    if (cond == Weather.CONDITION_MOSTLY_CLEAR || cond == Weather.CONDITION_MOSTLY_CLEAR) {
+        return res_weather_mostly_clear;
+    }
+    if (cond == Weather.CONDITION_PARTLY_CLEAR) {
+        return res_weather_partly;
+    }
+    if (cond == Weather.CONDITION_CLOUDY || cond == Weather.CONDITION_THIN_CLOUDS) {
+        return res_weather_cloudy;
+    }
+    if (cond == Weather.CONDITION_LIGHT_RAIN || cond == Weather.CONDITION_SHOWERS || cond == Weather.CONDITION_RAIN_SNOW || cond == Weather.CONDITION_HEAVY_RAIN) {
+        return res_weather_rain;
+    }
+    if (cond == Weather.CONDITION_LIGHT_SNOW || cond == Weather.CONDITION_HEAVY_SNOW) {
+        return res_weather_snow;
+    }
+    if (cond == Weather.CONDITION_SCATTERED_THUNDERSTORMS || cond == Weather.CONDITION_CHANCE_OF_THUNDERSTORMS || cond == Weather.CONDITION_HEAVY_SHOWERS || cond == Weather.CONDITION_TORNADO) {
+        return res_weather_storm;
+    }
+    if (cond == Weather.CONDITION_FOG || cond == Weather.CONDITION_MIST || cond == Weather.CONDITION_HAZY) {
+        return res_weather_clear;
+    }
+
+    // fallback:
+    return null;
+}
 
     function drawCelestial(dc as Graphics.Dc, centerX as Number, centerY as Number, radius as Number, angle as Number, isSun as Boolean) as Void {
     var x = (centerX + radius * Math.cos(angle)).toNumber();
@@ -269,7 +360,7 @@ function updateSunTimes() as Void {
         // Round to nearest whole number
         var percentRounded = Math.round(stepPercent);
     stepView.setText(percentRounded.toString()+"% to goal");
-View.onUpdate(dc);
+    View.onUpdate(dc);
     }
     function drawBattery(dc as Dc) as Void {
        // Battery bar at bottom
@@ -294,6 +385,9 @@ View.onUpdate(dc);
             dc.drawLine(bx + 1, fy, bx + fillWidth - 1, fy);
         }
     }
+
+    dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_BLACK);
+    dc.drawText(105, dc.getHeight() - barHeight -18, Graphics.FONT_SYSTEM_XTINY, Math.round(batteryPct).toNumber().toString()+"%", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // Load your resources here
@@ -320,12 +414,8 @@ View.onUpdate(dc);
         monthName,
         dateInfo.day
     ]);
-
-
     dc.drawText(105, 125, Graphics.FONT_XTINY, dateString, Graphics.TEXT_JUSTIFY_CENTER);
     }
-
-    
 
   function getClockTimeResolution() {
     // update once per minute

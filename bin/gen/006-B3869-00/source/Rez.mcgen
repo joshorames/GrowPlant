@@ -18,6 +18,13 @@ module Rez {
         (:initialized) var digit_8 as ResourceId;
         (:initialized) var digit_9 as ResourceId;
         (:initialized) var digit_colon as ResourceId;
+        (:initialized) var weather_clear as ResourceId;
+        (:initialized) var weather_mostly_clear as ResourceId;
+        (:initialized) var weather_partly as ResourceId;
+        (:initialized) var weather_cloudy as ResourceId;
+        (:initialized) var weather_rain as ResourceId;
+        (:initialized) var weather_snow as ResourceId;
+        (:initialized) var weather_storm as ResourceId;
         (:initialized) var FlowerStage1 as ResourceId;
         (:initialized) var FlowerStage2 as ResourceId;
         (:initialized) var FlowerStage3 as ResourceId;

@@ -11,7 +11,15 @@
     <bitmap id="digit_8" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\8.png" />
     <bitmap id="digit_9" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\9.png" />
     <bitmap id="digit_colon" filename="C:\Users\josho\Desktop\GrowPlant\resources\digits\colon.png" />
-
+     <!-- weather icons -->
+    <bitmap id="weather_clear"        filename="C:\Users\josho\Desktop\GrowPlant\resources\weather\weather_cloudy.png" />
+    <bitmap id="weather_mostly_clear" filename="C:\Users\josho\Desktop\GrowPlant\resources\weather\weather_cloudy.png" />
+    <bitmap id="weather_partly"       filename="C:\Users\josho\Desktop\GrowPlant\resources\weather\weather_cloudy.png" />
+    <bitmap id="weather_cloudy"       filename="C:\Users\josho\Desktop\GrowPlant\resources\weather\weather_cloudy.png" />
+    <bitmap id="weather_rain"         filename="C:\Users\josho\Desktop\GrowPlant\resources\weather\weather_rain.png" />
+    <bitmap id="weather_snow"         filename="C:\Users\josho\Desktop\GrowPlant\resources\weather\weather_snow.png" />
+    <bitmap id="weather_storm"        filename="C:\Users\josho\Desktop\GrowPlant\resources\weather\weather_storm.png" />
+ 
     <layouts>
         <layout id="FlowerStage1Layout">
             <bitmap id="FlowerStage" x="center" y="50" filename="C:\Users\josho\Desktop\GrowPlant\images\flower.png"/>
